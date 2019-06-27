@@ -1,0 +1,5137 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass paper
+\begin_preamble
+% Added by lyx2lyx
+\renewcommand{\textendash}{--}
+\renewcommand{\textemdash}{---}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{ Marcos J.
+ Peña Pollastri 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+and
+\end_layout
+
+\begin_layout Plain Layout
+
+Daniel Fuentes}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+SENTBALL
+\end_layout
+
+\begin_layout SubTitle
+Análisis de sentimientos utilizando Node.js y Twitter 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+date{
+\backslash
+small{
+\backslash
+today}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+24 junio del 2019
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+En el presente trabajo se investiga el desarrollo de una webapp que permita
+ la captura de datos no estructurados en Twitter y su correspondiente análisis
+ de sentimientos.
+ Los alumnos aplicaron dicho software en una prueba de análisis de la serie
+ Game Of Thrones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+SENTBALL
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset VSpace 1.2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+UNIVERSIDAD NACIONAL DE LA RIOJA
+\end_layout
+
+\begin_layout Standard
+\align center
+SEDE CAPITAL
+\end_layout
+
+\begin_layout Standard
+\align center
+LIC.
+ EN SISTEMAS DE INFORMACIÓN
+\begin_inset Newline newline
+\end_inset
+
+CÁTEDRA DE SEMINARIO DE ACTUALIZACIÓN II
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset VSpace 1.2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+MARCOS J.
+ PEÑA POLLASTRI
+\begin_inset Newline newline
+\end_inset
+
+DANIEL FUENTES
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset VSpace 1.1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+2019
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset VSpace 0.75cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Note that this is the date that the degree is *conferred* (should be one
+ of January, April, June, September, or November.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+does not need to be all uppercase
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Introducción
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sobre este trabajo
+\end_layout
+
+\begin_layout Standard
+El presente trabajo es realizado por pedido expreso de la cátedra de Seminario
+ de Actualización II, correspondiente al quinto año de la carrera de Lic.
+ en Sistemas de Información de la Universidad Nacional de La Rioja.
+ 
+\end_layout
+
+\begin_layout Standard
+Siendo la consigna el realizar un desarrollo e investigación relacionada
+ al software en una temática que sea de interés en la actualidad de la disciplin
+a de los Sistemas de Información.
+ Correspondiendo a eso, el Análisis de los Sentimientos es la temática seleccion
+ada.
+ 
+\end_layout
+
+\begin_layout Standard
+En esta sección introductoria se expondrá: 
+\end_layout
+
+\begin_layout Itemize
+Motivación que dio pie inicial a este trabajo.
+ 
+\end_layout
+
+\begin_layout Itemize
+Objetivos principales del mismo.
+ 
+\end_layout
+
+\begin_layout Itemize
+Campo de aplicación de la temática seleccionada.
+ 
+\end_layout
+
+\begin_layout Itemize
+Alcances.
+\end_layout
+
+\begin_layout Itemize
+Calendario de trabajo.
+\end_layout
+
+\begin_layout Subsection
+Motivación
+\end_layout
+
+\begin_layout Standard
+Con el auge de las redes sociales y el internet, las formas de recolectar
+ información por medios tradicionales (encuestas telefónicas, rating de
+ tv, cartas, etc) comenzaron a mostrar signos de obsolescencia, debido a
+ las propias limitaciones con las que fueron concebidas.
+ Por ejemplo, podemos saber con el rating televisivo que un programa no
+ es atractivo para los televidentes, sin embargo carecemos de información
+ sobre el porqué.
+ Esto nos lleva a que se debe encargar entonces algún otro método de medición,
+ como una encuesta telefónica.
+ Sin embargo, en la misma se cuentan factores problemáticos como: 
+\end_layout
+
+\begin_layout Itemize
+El engorroso proceso de seleccionar una muestra útil sin “ruido”, por ejemplo,
+ si decidimos llamar a 1000 personas en la Ciudad de Buenos Aires, tendremos
+ seguramente un considerable porcentaje de personas que no estén interesadas
+ en responder, o que para evitar hacer una encuesta demasiado extensa mientan
+ o no den razones extendidas de porqué.
+ 
+\end_layout
+
+\begin_layout Itemize
+Mientras se ha encargado este estudio de marketing para delimitar las razones,
+ nuestro programa de tv sigue en el aire, y sigue con problemas.
+ El tiempo en el que recibimos la información es un factor primordial, por
+ lo que quizás tardamos semanas en recibir los resultados del estudio, pero
+ para entonces ya será demasiado tarde y nuestro programa será cancelado.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto nos hace preguntar, y si existiera una forma de que las personas mismas
+ nos digan extensamente qué es lo que les molesta de nuestro producto, sin
+ intermediarios, sin complicaciones, solo como si fuera una charla amistosa.
+ Esta es justamente la facilidad que nos proporciona las redes sociales:
+ datos no estructurados pero igualmente valiosos.
+ 
+\end_layout
+
+\begin_layout Subsection
+Objetivos
+\end_layout
+
+\begin_layout Standard
+Los objetivos planteados son los siguientes:
+\end_layout
+
+\begin_layout Enumerate
+Desarrollar un software que permita la captura de datos no estructurados
+ que se encuentren en redes sociales.
+\end_layout
+
+\begin_layout Enumerate
+Que dicho software sea capaz de analizar los sentimientos de los datos capturado
+s por medio de una formula matemática.
+\end_layout
+
+\begin_layout Enumerate
+Persistencia de los datos capturados y sus correspondientes resultados.
+\end_layout
+
+\begin_layout Subsection
+Alcances
+\end_layout
+
+\begin_layout Enumerate
+Desarrollo de una web app que permita el procesamiento en backend de sentimiento
+s con respecto a un tema en la red social Twitter.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La creación de un banco de datos de lo procesado.
+ 
+\end_layout
+
+\begin_layout Subsection
+Calendario de trabajo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nº
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actividad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fecha de inicio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fecha de fin
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Elección de tema
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18/03/2019 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25/03/2019 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Investigación de antecedentes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26/03/2019 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Investigación de herramientas y componentes de software a utilizar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+03/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+09/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Programación del proyecto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Elaboración de presentación de diapositivas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prueba con el hashtag “#gameofthrones”
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Presentación en la clase de Seminario de actualización II
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22/04/2019 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Elaboración de video de presentación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20/05/2019 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24/05/2019 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Redacción final de este informe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25/05/2019 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16/06/2019 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Marco Teórico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Procesamiento del lenguaje natural (PLN o NLP) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/nlp.jpg
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El procesamiento del lenguaje natural PLN, o NLP del idioma inglés Natural
+ Language Processing.
+ es un campo de las ciencias de las computacion, inteligencia artificial
+ y lingüística que estudia las interacciones entre las computadoras y el
+ lenguaje humano.
+ El PLN se ocupa de la formulación e investigación de mecanismos eficaces
+ computacionalmente para la comunicación entre personas y máquinas por medio
+ del lenguaje natural, es decir, de las lenguas del mundo.
+ Por medio de estos algoritmos o procesos matemáticos traducen datos (lenguaje
+ natural) en el cerebro de la máquina para que éste determine patrones y
+ pueda generar una respuesta.
+ Mucho dependerá del tipo, calidad y cantidad de datos de entrenamiento
+ para determinar el éxito de respuesta de la máquina.
+ Por ejemplo, para entrenar a Google Home, el tipo de datos que se utilizó
+ fue la voz humana y seguramente con una extensa variedad de tonalidades
+ y registros de voz (calidad y cantidad) provenientes de hombres, mujeres,
+ niños, adultos, extranjeros y locales.
+ 
+\end_layout
+
+\begin_layout Standard
+El PLN no trata de la comunicación por medio de lenguas naturales de una
+ forma abstracta, sino de diseñar mecanismos para comunicarse que sean eficaces
+ computacionalmente, que se puedan realizar por medio de programas que ejecuten
+ o simulen la comunicación.
+ Los modelos aplicados se enfocan no solo a la comprensión del lenguaje
+ de por sí, sino a aspectos generales cognitivos humanos y a la organización
+ de la memoria.
+ El lenguaje natural sirve solo de medio para estudiar estos fenómenos.
+ Hasta la década de 1980, la mayoría de los sistemas de PLN se basaban en
+ un complejo conjunto de reglas diseñadas a mano.
+ A partir de finales de 1980, sin embargo, hubo una revolución en PLN con
+ la introducción de algoritmos de aprendizaje automático para el procesamiento
+ del lenguaje.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ventaja
+\end_layout
+
+\begin_layout Standard
+Por un lado es una ventaja, en la medida en que el locutor no tiene que
+ esforzarse para aprender el medio de comunicación a diferencia de otros
+ medios de interacción como lo son los lenguajes de comando o las interfaces
+ gráficas.
+ 
+\end_layout
+
+\begin_layout Subsection
+Desventaja 
+\end_layout
+
+\begin_layout Standard
+Su uso también también presenta limitaciones porque la computadora tiene
+ una limitada comprensión del lenguaje.
+ Por ejemplo, el usuario no puede hablar sobrentendidos, ni introducir nuevas
+ palabras, ni construir sentidos derivados, tareas que se realizan espontáneamen
+te cuando se utiliza el lenguaje natural.
+ Realmente, lo que constituye en ventaja para la comunicación humana se
+ convierte en problema a la hora de un tratamiento computacional, ya que
+ implican conocimiento y procesos de razonamiento que aún no sabemos ni
+ cómo caracterizarlos ni cómo formalizarlos.
+ 
+\end_layout
+
+\begin_layout Subsection
+Aplicaciones del Procesamiento de Lenguaje Natural 
+\end_layout
+
+\begin_layout Standard
+Las aplicaciones del PLN son muy variadas, ya que su alcance es muy grande,
+ algunas de las aplicaciones son: 
+\end_layout
+
+\begin_layout Itemize
+Traducción automática.
+\end_layout
+
+\begin_layout Itemize
+Recuperación de la información.
+\end_layout
+
+\begin_layout Itemize
+Extracción de Información y resúmenes.
+\end_layout
+
+\begin_layout Itemize
+Resolución cooperativa de problemas.
+\end_layout
+
+\begin_layout Itemize
+Tutores inteligentes.
+\end_layout
+
+\begin_layout Itemize
+Reconocimiento de Voz.
+\end_layout
+
+\begin_layout Subsection
+Arquitectura de un sistema PLN
+\end_layout
+
+\begin_layout Standard
+La arquitectura de un sistema de PLN se sustenta en una definición del LN
+ por niveles: estos son : fonológico, morfológico, sintáctico, semántico,
+ y pragmático.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+A)- Nivel Fonológico: trata de cómo las palabras se relacionan con los sonidos
+ que representan.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+B)- Nivel Morfológico: trata de cómo las palabras se construyen a partir
+ de unas unidades de significado más pequeñas llamadas morfemas.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+C)- Nivel Sintáctico: trata de cómo las palabras pueden unirse para formar
+ oraciones, fijando el papel estructural que cada palabra juega en la oración
+ y que sintagmas son parte de otros sintagmas.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+D)- Nivel Semántico: trata del significado de las palabras y de cómo los
+ significados se unen para dar significado a una oración, también se refiere
+ al significado independiente del contexto, es decir de la oración aislada.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+E)- Nivel Pragmático: trata de cómo las oraciones se usan en distintas situacion
+es y de cómo el uso afecta al significado de las oraciones.
+ Se reconoce un subnivel recursivo: discursivo, que trata de cómo el significado
+ de una oración se ve afectado por las oraciones inmediatamente anteriores.
+ 
+\end_layout
+
+\begin_layout Standard
+La arquitectura del sistema de procesamiento del lenguaje natural muestra
+ como la computadora interpreta y analizar las oraciones que le sean proporciona
+das La explicación de este sistema, es sencilla: 
+\end_layout
+
+\begin_layout Itemize
+El usuario le expresa a la computadora que es lo que desea hacer.
+\end_layout
+
+\begin_layout Itemize
+La computadora analiza las oraciones proporcionadas, en el sentido morfológico
+ y sintáctico, es decir, si las frases contienen palabras compuestas por
+ morfemas y si la estructura de las oraciones es correcta.
+ En esta etapa juegan un papel importante el analizador lexicográfico y
+ el analizador sintáctico.
+ El primero denominado scanner se encarga de identificar los componentes
+ léxicos definidos a priori, el segundo denominado parser se encarga de
+ verificar si se cumple un orden gramatical entre los elementos identificados
+ por el scaner.
+\end_layout
+
+\begin_layout Itemize
+El siguiente paso es analizar las oraciones semánticamente, es decir saber
+ cual es el significado de cada oración, y asignar el significado de estas
+ a expresiones lógicas (cierto o falso).
+ 
+\end_layout
+
+\begin_layout Itemize
+Una vez realizado el paso anterior, ahora podemos hacer el análisis pragmático
+ de la instrucción, es decir una vez analizadas las oraciones, ahora se
+ analizan todas juntas, tomando en cuenta la situación de cada oración,
+ analizando las oraciones anteriores, una vez realizado este paso, la computador
+a ya sabe que es lo que va a hacer, es decir, ya tiene la expresión final.
+ 
+\end_layout
+
+\begin_layout Itemize
+Una vez obtenida la expresión final, el siguiente paso es la ejecución de
+ esta, para obtener así el resultado y poder proporcionárselo al usuario.
+ 
+\end_layout
+
+\begin_layout Subsection
+Recursos abiertos para aplicar el Procesamiento de Lenguaje Natural
+\end_layout
+
+\begin_layout Standard
+Hoy en día, existe una infinidad de recursos abiertos para implementar las
+ técnicas de Procesamiento de Lenguaje Natural.
+ Por ejemplo, el Natural Language Toolkit de Python es una plataforma para
+ construir programas que permiten manipular lenguaje natural, además de
+ proporcionar más de 50 recursos que pueden ser utilizados en la fase de
+ entrenamiento.
+ En este mismo sentido, se encuentra disponible de manera gratuita el set
+ de herramientas para el análisis de lenguaje natural de Stanford, CoreNLP.
+ Adicionalmente, se han puesto a disposición otros modelos más complejos
+ como TextSum de TensorFlow, que a través del uso de redes neuronales genera
+ un titular tomando como insumo el primer párrafo de una noticia.
+ 
+\end_layout
+
+\begin_layout Standard
+Finalmente, para las personas que quieran ahondar en este tema, existen
+ cursos abiertos de Procesamiento de Lenguaje Natural.
+ Uno de los cursos más famosos para un público con conocimiento avanzado
+ en matemáticas, es el curso en inglés de la Universidad de Stanford sobre
+ Aprendizaje Profundo aplicado al Procesamiento de Lenguaje Natural.
+ 
+\end_layout
+
+\begin_layout Subsection
+Problema del procesamiento de lenguaje natural 
+\end_layout
+
+\begin_layout Standard
+La principal dificultad en los procesos de recuperación de información mediante
+ lenguajes formales no es de índole técnica sino psicológica: entender cuál
+ es la necesidad real del usuario, cual es la correcta formulación de su
+ pregunta o necesidad.
+ La dirección más prometedora de resolver este problema es el uso de lenguaje
+ natural.
+ Sin embargo, uno de los grandes problemas del PLN se produce cuando una
+ expresión en LN posee más de una interpretación, es decir, cuando en el
+ lenguaje de destino se le pueden asignar dos o más expresiones distintas.
+ 
+\end_layout
+
+\begin_layout Standard
+Este problema de la ambigüedad se presenta en todos los niveles del lenguaje,
+ sin excepción.
+ Ejemplo: “Hay alguien en la puerta, que te quiere hablar” “ Hay alguien,
+ en la puerta que te quiere hablar” No está claro, si el predicado “te quiere
+ hablar” se adjudica a “alguien” o a “la puerta”, sabemos que la puertas
+ no hablan, por tanto deducimos que es a alguien.
+ Pero esto no lo puede deducir la máquina, a no ser que esté enterada de
+ lo que hacen o no hacen las puertas.
+ En apariencia este problema es demasiado sencillo, pero en realidad, es
+ uno de los más complicados y que más complicaciones ha dado para que el
+ PLN pueda desarrollarse por completo, ya que al presentarse en todos los
+ niveles del lenguaje, se tienen que desarrollar programas (lenguaje formal)
+ para solucionarlos en cada caso.
+ 
+\end_layout
+
+\begin_layout Subsection
+Historia de PLN
+\end_layout
+
+\begin_layout Subsubsection
+La lingüística teórica y el PLN en los años 40 y 50 
+\end_layout
+
+\begin_layout Standard
+La investigación en PLN se remonta a los años 40, siendo la traducción automátic
+a una de sus primeras aplicaciones.
+ en 1949, el interés por la traducción automática despertó gracias a un
+ famoso memorándum del matemático Warren Weaver, en el cual se propone la
+ aplicación de las técnicas del desciframiento criptográfico, los métodos
+ estadísticos y la teoría de la información, para la traducción automática
+ de textos con el fin de “solucionar los problemas mundiales de traducción”.
+ en realidad, esta idea no era tan original como parecía, ya que una de
+ las tareas habituales de un ordenador ha sido siempre la traducción del
+ código escrito en un lenguaje informático de alto nivel al lenguaje máquina,
+ el cual se limita a una secuencia de ceros y unos.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Los años 60 
+\end_layout
+
+\begin_layout Standard
+El nacimiento de la Inteligencia Artificial uno de los hitos en las investigacio
+nes en PLN en la década de los 60 fue el nacimiento de la inteligencia artificia
+l, la cual tuvo lugar en un seminario de dos meses organizado por John mccarthy
+ y celebrado en el verano de 1956 en el Dartmouth college en Hanover, new
+ Hampshire: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/arbolitos.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las discusiones intelectuales que se mantuvieron en este seminario, en el
+ que participaron los investigadores pioneros en inteligencia automática,
+ tales como marvin minsky, nathaniel Rochester y claude shannon, entre otros
+ muchos, sirvieron para colocar los pilares de la nueva disciplina de la
+ Inteligencia Artificial.
+ uno de los aspectos del problema de la inteligencia artificial que se trató
+ fue la posibilidad de que un ordenador pudiera ser programado para utilizar
+ una lengua, en concreto el inglés.
+ Especulaba con la idea de que la mayor parte del pensamiento humano consistía
+ en la manipulación de palabras según un conjunto de reglas de razonamiento.
+ Por tanto, y debido a la marcada formación matemática de los organizadores,
+ el centro de interés de estas actividades radicó principalmente en el desarroll
+o de sistemas basados en el razonamiento lógico.
+ con respecto a la comprensión automática del lenguaje, uno de los sistemas
+ de diálogo más representativos en la década de los 60 fue ELIZA (Weizenbaum,
+ 1966).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/eliza.jpg
+	lyxscale 30
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El cual simulaba ser un psicoterapeuta que mantenía una conversación con
+ el usuario.
+ el algoritmo que simulaba la inteligencia de Eliza consistía básicamente
+ en leer una oración de entrada, buscar la presencia de un patrón a modo
+ de plantilla predefinida (i.e.
+ constantes y variables), el cual se activaba a través de una palabra clave,
+ y finalmente transformar la entrada en una respuesta.
+ Por tanto, el sistema elegía una respuesta al azar de las respuestas asociadas
+ al patrón, incorporando igualmente expresiones utilizadas en el propio
+ texto de entrada.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ambigüedad
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/ambiguedad 2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las lenguas naturales son inherentemente ambiguas en diferentes niveles:
+\end_layout
+
+\begin_layout Itemize
+En el nivel léxico, una misma palabra puede tener varios significados, y
+ la selección del apropiado se debe deducir a partir del contexto oracional
+ o conocimiento básico.
+ Muchas investigaciones en el campo del procesamiento de lenguajes naturales
+ han estudiado métodos de resolver las ambigüedades léxicas mediante diccionario
+s, gramáticas, bases de conocimiento y correlaciones estadísticas.
+\end_layout
+
+\begin_layout Itemize
+A nivel referencial, la resolución de anáforas y catáforas implica determinar
+ la entidad lingüística previa o posterior a que hacen referencia.
+\end_layout
+
+\begin_layout Itemize
+En el nivel estructural, se requiere de la semántica para desambiguar la
+ dependencia de los sintagmas preposicionales que conducen a la construcción
+ de distintos árboles sintácticos.
+ Por ejemplo, en la frase Rompió el dibujo de un ataque de nervios.
+\end_layout
+
+\begin_layout Itemize
+En el nivel pragmático, una oración, a menudo, no significa lo que realmente
+ se está diciendo.
+ Elementos tales como la ironía tienen un papel importante en la interpretación
+ del mensaje.
+\end_layout
+
+\begin_layout Standard
+Para resolver estos tipos de ambigüedades y otros, el problema central en
+ el PLN es la traducción de entradas en lenguas naturales a una representación
+ interna sin ambigüedad, como árboles de análisis.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/ambiguedad.jpg
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Adquisición de conocimiento léxico 
+\end_layout
+
+\begin_layout Standard
+El gran problema al que se enfrentan en el diseño de sistemas de lenguaje
+ natural a gran escala, es el gran número de unidades léxicas de las lenguas
+ naturales, así como a la constante incursión de palabras nuevas o nuevas
+ acepciones de palabras existentes.
+ La adquisición de la información léxica necesaria para lexicones computacionale
+s plantea serios problemas, tanto en lo que se refiere a la efectividad
+ de los diferentes métodos que se han empleado como a la inversión de tiempo,
+ dinero y recursos humanos y computacionales que estos métodos requieren.
+ Se puede considerar que existen tres métodos o fuentes principales para
+ la adquisición de conocimiento léxico: 
+\end_layout
+
+\begin_layout Enumerate
+Adquisición manual de información léxica.
+\end_layout
+
+\begin_layout Enumerate
+Diccionarios en formato magnético (MRDs).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Los córpora textuales informatizados.
+ 
+\end_layout
+
+\begin_layout Standard
+Los tres métodos plantean ventajas y desventajas, tanto en lo que se refiere
+ a los recursos que requieren como a la efectividad que han demostrado hasta
+ ahora.
+ Aunque en principio las fuentes electrónicas pueden aportar una gran cantidad
+ de información lingüística muy valiosa, que puede servir como punto de
+ partida para la creación de una base de datos léxica, en la práctica es
+ difícil aprovechar toda la información que esas fuentes electrónicas contienen.
+ Una de las dificultades, y quizás la principal, es que los diccionarios
+ están diseñados por humanos (y no máquinas ) para ser usados por humanos.
+ Los usuarios (humanos) son hablantes nativos de una lengua, que conocen
+ el contexto de lo que se está hablando, y saben implícitamente, cómo está
+ estructurado el lexicón de su lengua.
+ Los MRDs, en muchas ocasiones, son elaborados por lexicografos, quienes
+ explotan el conocimiento lingüístico de sus usuarios potenciales, de modo
+ que las entradas de un diccionario contienen solo la información necesaria
+ para que un hablante de una lengua sea capaz de conectarla con su conocimiento
+ lingüístico general.
+ 
+\end_layout
+
+\begin_layout Standard
+Karen Sparck-Jones demostró en un estudio realizado que los diccionarios
+ deben contener un componente de circularidad, ya que cada palabra usada
+ en las definiciones ha de ser, a su vez, definida en el diccionario.
+ Algunas de estas circularidades mantienen una distancia semántica reducida,
+ como por ejemplo las definiciones mutuas de “bueno” y “excelente”, y son
+ por tanto fáciles de observar y asimilar por un lector humano, pero son
+ muy difíciles de localizar a nivel formal lo cual dificulta la labor de
+ extracción de información de las definiciones.
+ 
+\end_layout
+
+\begin_layout Standard
+El lexicón se considera como un “diccionario mental” en el que se registran
+ las palabras que conoce un hablante.
+ Este “diccionario” especifica los rasgos característicos de los componentes
+ léxicos (palabras y morfemas), como irregularidades morfológicas, requerimiento
+s sobre alomorfos, información pragmática, etc.
+ Un símbolo alomorfo se refiere a cada uno de las diferentes formas fonológicas
+ que puede tener un morfema abstracto.
+ Estrictamente la realización fonológica concreta de un morfema se llama
+ morfo, si existe más de un morfo para el mismo morfema entonces usamos
+ el término alomorfo.
+ Algunos modelos gramaticales formales basan la generación de oraciones
+ en el procesamiento de los rasgos de las unidades del lexicón.
+ 
+\end_layout
+
+\begin_layout Standard
+En estos modelos, el lexicón no es parte de la gramática, sino que proyecta
+ sus rasgos a través de mecanismos inherentes a las gramáticas.
+ La finalidad fundamental del procesamiento de lenguaje natural es la automatiza
+ción de los procesos lingüísticos, tales como la comprensión, producción
+ o adquisición de una lengua, tareas que los usuarios de una lengua realizan
+ fluida y naturalmente.
+ Esto hace converger intereses de varias disciplinas como son lingüistas
+ computacionales, psicolingüistas, informáticos e ingenieros de sistemas.
+ Todos ellos, desde diferentes perspectivas teóricas y prácticas, intentan
+ desarrollar una teoría que sea totalmente explícita (y por tanto automatizable)
+ de los procesos lingüísticos.
+ 
+\end_layout
+
+\begin_layout Standard
+La mayoría de los sistemas de procesamiento de lenguaje natural adoptan
+ un enfoque denominados “basado en el conocimiento” (knowledge-based), ya
+ que para llevar a cabo la tarea para la que están diseñados, necesitan
+ incorporar conocimiento lingüístico explícito, junto con otros tipos de
+ conocimiento de carácter más general.
+ Por ejemplo, un sistema que convierta un texto en su correspondiente cadena
+ hablada, necesita “conocimiento” sobre la pronunciación de las letras,
+ así como de las palabras individuales que no siguen las reglas generales.
+ También precisa conocimiento sobre los patrones rítmicos de acentuación
+ y de cómo la organización sintáctica afecta la entonación y prosodia.
+ Atendiendo estas consideraciones, con el objetivo de consensuar en la investiga
+ción sobre el PLN, se ha dividido su estudio en subsistemas , en relación
+ con los niveles presentados en la arquitectura de un sistema de PLN, identifica
+ndo cinco tipos de conocimiento: 
+\end_layout
+
+\begin_layout Enumerate
+Conocimiento Fonológico: Información sobre el sistema de sonidos y la estructura
+ de las palabras y las expresiones, los patrones de acentuación, la entonación,
+ etc.
+\end_layout
+
+\begin_layout Enumerate
+Conocimiento morfológico: Información sobre la estructura de las palabra;
+ por ejemplo, que los fonemas /s/ y /z/ se añaden en inglés a los nombres
+ para formar el plural.
+\end_layout
+
+\begin_layout Enumerate
+Conocimiento sintáctico: Información sobre las reglas sintácticas y/o gramatical
+es.
+\end_layout
+
+\begin_layout Enumerate
+Conocimiento semántico: Información sobre el significado que se da a las
+ diversas construcciones sintácticas y de cómo esos significados se combinan
+ para formar el significado de las oraciones.
+\end_layout
+
+\begin_layout Enumerate
+Conocimiento pragmático: Información central en muchas tareas especificas
+ como por ejemplo, la recuperación de los referentes de los pronombres y
+ las intenciones comunicativas que subyacen en una frase en particular,
+ el analisis de las presuposiciones del hablante.
+\end_layout
+
+\begin_layout Subsection
+La comprensión del lenguaje en Inteligencia Artificial
+\end_layout
+
+\begin_layout Standard
+La inteligencia Artificial de los años 70 se orientó principalmente hacia
+ el desarrollo de sistemas de comprensión del lenguaje natural.
+ la escuela de Yale, i.e.
+ Roger schank y sus colaboradores (schank, 1972, 1975; schank y Abelson,
+ 1977), lideró las investigaciones en este campo, incorporando la teoría
+ del guión como base para un modelo dinámico de la memoria.
+ este modelo de comprensión del lenguaje, el cual resultó ser una importante
+ influencia en la semántica y la representación del conocimiento, se basó
+ en el formalismo de la Dependencia conceptual (schank, 1972), i.e.
+ grafos que permiten representar conceptualmente un texto de entrada a partir
+ de la descomposición semántica de los verbos usando la Gramática de casos
+ de Fillmore.
+ 
+\end_layout
+
+\begin_layout Standard
+Un sistema de comprensión automática del inglés que podía manipular bloques
+ de juguete sobre una mesa a partir de unas órdenes, además de poder ser
+ interrogado sobre el escenario resultante incorporó la teoría funcional
+ de Halliday.
+ este sistema utilizaba información semántica y del contexto para comprender
+ el discurso, ya que se basaba en la idea de que no es posible construir
+ un sistema informático razonablemente inteligente a menos que pueda comprender
+ el tema sobre el cual está trabajando, lo cual implicaba proporcionarle
+ un modelo detallado del conocimiento que requería.
+ no obstante, otras interfaces de diálogo persona-máquina en esta década
+ no requirieron un complejo formalismo de representación del significado
+ con el fin de simular la interacción comunicativa.
+ 
+\end_layout
+
+\begin_layout Standard
+Éste es el caso de PARRY (colby, 1973), un sistema que permitía simular
+ las respuestas de un paciente paranoico que sufría la psicosis de que lo
+ estaba persiguiendo la mafia.
+ Aunque inspirado en el trabajo de eliza, PARRY no repetía las palabras
+ de sus entrevistadores, sino que contribuía a la conversación de forma
+ fluida además de reaccionar tal y como lo haría un paranoico.
+ A pesar de que SHRDlU y PARRY coincidían en ser sistemas basados en el
+ diálogo, las diferentes concepciones de sus autores sirven para representar
+ dos enfoques muy diferentes de entender el PLN.
+ el primero empleaba un análisis lingüístico basado en un modelo teórico
+ gramatical incorporando igualmente conocimiento del mundo sobre el cual
+ se aplicaba un razonamiento basado en la lógica.
+ en cambio, el segundo apostaba por el simple reconocimiento de patrones
+ en la superficie de la entrada textual y un módulo de interpretación-acción
+ cuyas reglas de producción permitían recrear el modelo de paranoia.
+ 
+\end_layout
+
+\begin_layout Subsection
+Las expresiones regulares en PLN y la búsqueda de patrones
+\end_layout
+
+\begin_layout Standard
+La tarea del reconocimiento de entidades tradicionalmente está compuesto
+ por dos sub-tareas: la detección o identificación y la clasificación de
+ las entidades.
+ En la detección de las entidades es donde tiene lugar la utilización de
+ expresiones regulares, pues permiten codificar las estructuras que marcan
+ los patrones detectados en el texto.
+ Para cada patrón o grupo de patrones que se intente detectar, existirá
+ al menos una regla que lo define.
+ 
+\end_layout
+
+\begin_layout Standard
+La extracción de información es el proceso de “localizar las porciones de
+ un texto dado que contengan información relevante para las necesidades
+ de un usuario y proporcionar dicha información de forma adecuada a su proceso
+ (manual o automático)”.
+ Típicamente un sistema de extracción de información extrae informaciones
+ sobre entidades, relaciones y eventos a partir de documentos en un dominio
+ restringido.
+ En la fase de detección de la información relevante también es necesaria
+ la utilización de reglas que determinen los patrones que correspondan a
+ la información que se intenta detectar.
+ Por ejemplo, se desea detectar, etiquetar y extraer la información referente
+ a las entidades de tipo persona y moneda.
+ Para el ejemplo: Juan tiene $5,00 y Pedro tiene $4,00.
+ Se necesitaría establecer reglas que deriven en expresiones regulares que
+ modelen el patrón correspondiente a cada entidad buscada.
+ En la Tabla 1 se muestran las expresiones implicadas para el ejemplo anterior
+ y cómo tributa a cada una de las técnicas.
+ 
+\end_layout
+
+\begin_layout Standard
+Para establecer las reglas se propone un método que a su vez se materializa
+ en una herramienta informática capaz de conformar fácilmente autómatas
+ finitos y obtener su correspondientes reglas como expresión regular.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/RE.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Análisis de sentimientos
+\end_layout
+
+\begin_layout Standard
+El análisis de sentimientos es una tarea incluida en el ámbito del Procesamiento
+ de Lenguaje Natural o NLP (Natural Language Processing).
+ Su objetivo es encontrar contenido subjetivo en los textos de entrada.
+ El análisis de sentimientos busca extraer opiniones y la polaridad de éstas,
+ mediante la identificación de características que determinan cuán positivo
+ o negativo es el texto.
+\end_layout
+
+\begin_layout Standard
+El análisis de sentimientos ha sido considerado inicialmente como una subdiscipl
+ina de clasificación basada en la opinión.
+ La técnica en general puede estar orientada a tres grandes tipos de tareas:
+ 
+\end_layout
+
+\begin_layout Itemize
+Clasificación de sentimientos: realizar una clasificación de un conjunto
+ de opiniones en tres categorías: positivas, negativas o neutrales.
+ Presenta desafíos adicionales el hecho de que las opiniones se encuentran
+ en múltiples idiomas o provienen de varios dominios, como biología, sociología,
+ etc.
+ 
+\end_layout
+
+\begin_layout Itemize
+Clasificación de subjetividad: determinar si una oración es subjetiva u
+ objetiva.
+ Una oración objetiva contiene información imparcial, mientras que una oración
+ subjetiva contiene información de carácter personal como opiniones.
+ 
+\end_layout
+
+\begin_layout Itemize
+Resumen de opinión: permitir extraer las características principales que
+ son compartidas por uno o más documentos y el sentimiento acerca de estas
+ características.
+ 
+\end_layout
+
+\begin_layout Standard
+En el análisis de redes sociales, particularmente en análisis de sentimientos
+ a partir del estudio de tweets para obtener su polaridad, existen dos métodos
+ que son los más populares.
+ El primero de ellos utiliza el enfoque del aprendizaje computacional (machine-l
+earning approaches) y el segundo utiliza diccionarios léxicos.
+\end_layout
+
+\begin_layout Standard
+El aprendizaje computacional analiza la información automáticamente de forma
+ supervisada, basándose en conjuntos de entrenamiento que son utilizados
+ para catalogar al resto de las opiniones encontradas en la web, realizando
+ pruebas y luego validandose.
+ Las principales técnicas de este método son: Support Vector Machines (SVM),
+ Naive Bayes y Clasificadores de Máxima Entropía.
+ En estas técnicas se utiliza la categoría gramatical de las palabras, la
+ presencia y frecuencia de algunos términos y su composición semántica.
+ Sin embargo, la mayoría de estos métodos son acompañados de algún diccionario
+ que entrega información a priori de los términos para obtener las polaridades
+ respectivas.
+ En algunos casos, estos diccionarios son realizados por personas y en otros
+ se ocupa un sistema semiautomático.
+ El método de diccionarios léxicos se basa en una lista de palabras con
+ un determinado peso y/o categoría emocional.
+ Estos diccionarios presentan principalmente adjetivos, que son los que
+ aportan mayor información al momento de analizar los sentimientos, aunque
+ también incluye verbos, adverbios y sustantivos.
+ 
+\end_layout
+
+\begin_layout Standard
+La mayor cantidad de versiones de diccionarios está en idioma inglés aunque
+ existen algunas en español, pero en general en versión beta.
+ Éstos permiten determinar si una frase es negativa o positiva dependiendo
+ de la cantidad de palabras presentes en el diccionario y de la fuerza de
+ su sentimiento.
+ Uno de los diccionarios más completos es LIWC, presente una versión en
+ inglés bastante completa y una en español que está aún en etapa de desarrollo.
+ En este caso, las palabras son etiquetadas en una categoría determinada
+ y además se les asigna una ponderación.
+ 
+\end_layout
+
+\begin_layout Subsection
+Tipos de análisis de sentimiento 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/sentimientos.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A la hora de extraer esta información, hay una gran variedad de métodos
+ y algoritmos dependiendo del nivel de granularidad del análisis que queramos
+ llevar a cabo, Se distinguen tres niveles: nivel de documento, de oración
+ o de aspecto.
+ 
+\end_layout
+
+\begin_layout Standard
+El análisis a nivel de documento determina el sentimiento general expresado
+ en un texto, mientras que el análisis a nivel de frase lo especifica para
+ cada una de las oraciones del texto.
+ Sin embargo, estos dos tipos de análisis no profundizan en detalle el elemento
+ que a las personas les gusta o no.
+ No especifican sobre qué es la opinión, ya que considerando la opinión
+ general de un objeto como positiva (o negativa) no significa que el autor
+ tenga una opinión positiva (o negativa) de todos los aspectos de dicho
+ objeto.
+ 
+\end_layout
+
+\begin_layout Standard
+Para este trabajo nos enfocamos en realizar un análisis a nivel de documento,
+ ya que, debido al limite en los mensajes, los autores suelen ser concisos
+ y van directo al grano sin tener la posibilidad de incluir varios aspectos
+ diferenciados en un solo tweet.
+ Por esta razón, usar el tweet como unidad de análisis parece proveer un
+ nivel de granularidad adecuado para hacer un análisis de sentimiento desglosado.
+\end_layout
+
+\begin_layout Subsubsection
+Análisis a nivel de documento
+\end_layout
+
+\begin_layout Standard
+Considerada como una de las tareas más simples de la minerıa de opiniones,
+ el análisis a nivel de documento apunta a clasificar la opinión de un documento
+, en este caso un tweet.
+ Esta tarea no considera los detalles en cuanto a entidades o aspectos,
+ sino que considera el documento como un todo, el cual será etiquetado como
+ positivo o negativo.
+ Esta puede ser considerada como una tarea tradicional de clasificación
+ de texto, donde las clases son las diferentes orientaciones en cuanto a
+ los sentimientos.
+ No obstante, para asegurar que este tipo de análisis tenga sentido asumimos
+ que cada documento expresa una única opinión sobre una única entidad.
+ Si bien esto puede parecer una limitación, porque en un tweet uno podrıa
+ expresar más de una opinión hacia distintas entidades, en la práctica produce
+ resultados positivos, ya que los usuarios suelen enfocarse en un único
+ aspecto en cada tweet.
+ Seguramente en otros contextos, o si no estuviera limitado el largo de
+ los mensajes, sería una buena idea considerar sistemas de análisis más
+ complejos que permitan realizar un análisis con mayor granularidad.
+ Las palabras que conforman las opiniones son el factor determinante en
+ el análisis de sentimientos también es una buena opción utilizar métodos
+ de aprendizaje basados en el uso de lexicones.
+ Estos son diccionarios que contienen listados de palabras etiquetadas con
+ el sentimiento asociado correspondiente, en algunos casos por un valor
+ que también indica la intensidad del mismo.
+ Luego, dada una opinión, simplemente podemos buscar el valor de todas las
+ palabras que la componen y sumar el valor asociado para finalmente clasificar
+ la opinión como positiva o negativa según corresponda.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Aprendizaje Computacional 
+\end_layout
+
+\begin_layout Standard
+Cuando el ser humano adquiere conocimientos, habilidades, actitudes o valores
+ a través del estudio, de la experiencia o la enseñanza, se dice que aprende.
+ Este proceso es fácil para el humano, sin embargo, lograr que una máquina
+ aprende cómo lo hacen las personas es una interrogante que existe desde
+ los inicios de las computadoras.
+ Actualmente, no existe una máquina capaz de aprender de la misma manera
+ que lo hace el hombre, sin embargo, se han creado algoritmos eficaces para
+ algunas tareas de aprendizaje.
+ En términos muy generales, se puede decir, que un programa aprende, si
+ el desempeño obtenido para realizar alguna tarea, mejora con la experiencia.
+ Se puede decir entonces que el Aprendizaje Computacional estudia los procesos
+ computacionales que hay detrás del aprendizaje en humanos y en las máquinas.
+ Esta disciplina juega un papel importante en muchas áreas de la ciencia.
+\end_layout
+
+\begin_layout Subsection
+Tipos de Aprendizaje 
+\end_layout
+
+\begin_layout Standard
+Un aspecto importante que influye en el aprendizaje es el grado de supervisión.
+ En algunos casos, un experto en el dominio proporciona al aprendiz retroaliment
+ación acerca de lo que es apropiado para su aprendizaje.
+ En otros casos, a diferencia del aprendizaje supervisado, ésta retroalimentació
+n está ausente, dando lugar al aprendizaje no-supervisado.
+ 
+\end_layout
+
+\begin_layout Standard
+Y en otros casos, se combinan el aprendizaje supervisado y el no supervisado,
+ dando lugar al aprendizaje semi-supervisado.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Aprendizaje supervisado 
+\end_layout
+
+\begin_layout Standard
+El aprendizaje supervisado es aquel en donde se intenta aprender de ejemplos
+ como si estos fueran un maestro.
+ Se asume que cada uno de estos ejemplos incluye características o atributos
+ que especifican o definen a qué categoría o clase pertenece, de un conjunto
+ de categorías o clases predefinidas, de esta manera, cada ejemplo se asocia
+ con su clase.
+ Este tipo de aprendizaje es llamado supervisado por la presencia de los
+ ejemplos para guiar el proceso de aprendizaje.
+ Al conjunto de ejemplos del cual se intenta aprender se le llama conjunto
+ de entrenamiento.
+ Usando estos datos se construye un modelo de predicción, o aprendiz, el
+ cual permitirá predecir la clase para nuevos objetos no vistos por el aprendiz.
+ La construcción del modelo se logra gracias a un algoritmo de aprendizaje.
+ 
+\end_layout
+
+\begin_layout Standard
+Los algoritmos comúnmente utilizados son Naive Bayes, Máquinas de Soporte
+ Vectorial, Vecinos más cercanos, J48 entre otros.
+ En particular, en el área de Clasificación de Textos, los algoritmos típicament
+e utilizados son Naive Bayes y Máquinas de Soporte Vectorial.
+ Este tipo de aprendizaje tiene la ventaja de que no es necesario que al
+ aprendiz se le muestren todos los ejemplos existentes, es decir que puede
+ clasificar un ejemplo sin haberlo visto nunca.
+ La desventaja es que a pesar de lo anterior, sí es necesaria una gran cantidad
+ de ejemplos para el entrenamiento.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Aprendizaje no supervisado 
+\end_layout
+
+\begin_layout Standard
+Este tipo de aprendizaje no presupone ningún conocimiento previo sobre lo
+ que se quiere aprender.
+ Tampoco existe un maestro que conozca los conceptos a aprender, por esta
+ razón a este tipo de aprendizaje se le denomina Aprendizaje no-supervisado.
+\end_layout
+
+\begin_layout Standard
+La diferencia es que, los ejemplos sólo incluyen los atributos, es decir,
+ no se encuentran asociados a una clase.
+ Para este caso la tarea se enfoca en descubrir patrones comunes entre los
+ datos, que permitan separar los ejemplos en clases o jerarquías de clases.
+ De éstas se podrán extraer caracterizaciones, o permitirán predecir característ
+icas, o deducir relaciones útiles, a lo que se denomina como agrupación
+ (clustering).
+ Algunos de los algoritmos más comunes son: Cobweb, EM, y K Means.
+ Siendo este último el más utilizado en el área de Clasificación de Textos.
+ Este tipo de aprendizaje tiene la ventaja de que no es necesaria la presencia
+ de un maestro para el aprendizaje o de un conjunto de entrenamiento.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/no supervisado.jpg
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Aprendizaje semi-supervisado 
+\end_layout
+
+\begin_layout Standard
+El aprendizaje semi-supervisado es la combinación del aprendizaje supervisado
+ y el no-supervisado.
+ En éste se aprende con la ayuda de dos conjuntos.
+ Uno que contiene datos asociados a una clase, y el otro que contiene datos
+ no asociados a una clase.
+ La idea es aprender con los datos asociados a su clase y asociar una clase
+ a los datos que no contienen asociada una clase.
+ Algunos de los algoritmos más comunes son: Co-training, ASSEMBLE y self-trainin
+g.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/semisupervisado.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+La Red Social Twitter 
+\end_layout
+
+\begin_layout Standard
+Twitter se creó en 2006 como una red social en base a contenido con forma
+ de SMS.
+ Desde entonces ha crecido rápidamente ganando mucha popularidad en los
+ últimos años.
+ Según los datos oficiales que figuran en su web son aproximadamente 326
+ millones de usuarios activos por mes que acceden diariamente para compartir
+ experiencias y opiniones convirtiéndose así en una herramienta ideal para
+ la realización de encuestas y sondeos.
+ 
+\end_layout
+
+\begin_layout Standard
+Twitter permite a los usuarios enviar y leer mensajes de texto de hasta
+ 140 caracteres, conocidos como tweets.
+ Este sitio es una gran fuente de información subjetiva en tiempo real ya
+ que estos millones de usuarios comparten opiniones sobre diferentes aspectos
+ de su vida cotidiana.
+ Twitter ha sido usada para una variedad de propósitos en diferentes industrias
+ y situaciones.
+ Por ejemplo, los usuarios pueden encontrar o emitir opiniones sobre un
+ producto o servicio de su interés, las compañías y figuras públicas pueden
+ controlar su reputación en línea, se puede conocer la opinión de cada usuario
+ respecto a implementación de políticas públicas,campañas de difusión, entreteni
+miento, entre otras.
+ 
+\end_layout
+
+\begin_layout Standard
+Twitter permite identificar estos temas a través de los denominados hashtag
+ o etiquetas, que se caracterizan por comenzar con el carácter # y una cadena
+ de caracteres a continuación formada por una o varias palabras concatenadas.
+ Esta etiqueta funciona como metadato y permite que los tweets se añadan
+ a una lista de mensajes con hashtag similares.
+ Esto permite a los usuarios obtener resultados rápidamente sobre un mismo
+ tema.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Software utilizado en este proyecto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Node.Js
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/node.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Node.Js o también conocido como Node, es un entorno de ejecución de Javascript
+ en backend multiplataforma, código abierto.
+ Esto permite la ejecución de código Javascript fuera del navegador web,
+ y poder escribir programas de lineas de comando o scripting para servidores
+ (como por ejemplo la creación de paginas web dinámicas).
+ 
+\end_layout
+
+\begin_layout Standard
+Sumado a esto, Node.js representa el paradigma “Javascript en todos lados”,
+ unificando el desarrollo de las aplicaciones web en un solo lenguaje, en
+ vez de utilizar diferentes lenguajes para el scripting en servidor o en
+ el cliente.
+\end_layout
+
+\begin_layout Standard
+Node.js posee una arquitectura orientada a los eventos, capaz de realizar
+ entradas y salidas asíncronas.
+ Esto permite optimizar el consumo y escalabilidad de aplicaciones web en
+ muchas operaciones de E/S, como también aplicaciones en tiempo real.
+ 
+\end_layout
+
+\begin_layout Standard
+El proyecto de desarrollo distribuido de Node.js, a manos de la Node.js Foundation
+, es facilitada por el programa de proyectos colaborativos de la Linux Foundatio
+n.
+ Algunas de las grandes empresas que utilizan software construido en Node.js
+ son: GoDaddy, Groupon, IBM, LinkedIn, Microsoft, Netflix, PayPal, Walmart,
+ entre otros.
+ 
+\end_layout
+
+\begin_layout Subsection
+Descripción general
+\end_layout
+
+\begin_layout Standard
+Node.js permite la creación de servidores web y herramientas de red utilizando
+ JavaScript y una colección de "módulos" que manejan varias funciones centrales.
+ Se proporcionan módulos para la E / S del sistema de archivos , redes (DNS,
+ HTTP, TCP, TLS / SSL o UDP), datos binarios (buffers), funciones de criptografí
+a , flujos de datos , y otras funciones básicas.
+ Los módulos de Node.js utilizan una API diseñada para reducir la complejidad
+ de escribir aplicaciones de servidor.
+ 
+\end_layout
+
+\begin_layout Standard
+Aunque inicialmente el sistema de módulos se basaba en el patrón de módulos
+ commonjs, la reciente introducción de módulos en la especificación ECMAScript
+ ha cambiado la dirección de usar módulos ECMAScript en Node.js de forma
+ predeterminada.
+\end_layout
+
+\begin_layout Standard
+Node.js es oficialmente compatible con Linux, macOS y Microsoft Windows 7
+ y Server 2008 (y posteriores) por parte del equipo.
+ También hay soporte de nivel 2 para SmartOS e IBM AIX.
+ Y soporte experimental para FreeBSD; OpenBSD también funciona y, por ejemplo,
+ las versiones LTS disponibles para IBM i (AS/400).
+ El código fuente provisto también puede construirse en sistemas operativos
+ similares a los que son oficialmente compatibles o ser modificado por terceros
+ para que sean compatibles con otros, como los servidores NonStop y Unix.
+ Alternativamente, se puede escribir con CoffeeScript (una alternativa de
+ JavaScript), Dart o TypeScript (formas de JavaScript fuertemente tipadas),
+ o cualquier otro lenguaje que se pueda compilar en JavaScript.
+ 
+\end_layout
+
+\begin_layout Standard
+Node.js se utiliza principalmente para crear programas de red como los servidores
+ web.
+ La diferencia más significativa entre Node.js y PHP es que la mayoría de
+ las funciones en el bloque PHP hasta su finalización (los comandos solo
+ se ejecutan después de que terminan los comandos anteriores), mientras
+ que las funciones de Node.js no se bloquean (los comandos se ejecutan simultánea
+mente o incluso en paralelo, y use devoluciones de llamada para indicar
+ la finalización o el fallo).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Arquitectura de la plataforma 
+\end_layout
+
+\begin_layout Standard
+Node.js lleva la programación dirigida por eventos a los servidores web ,
+ lo que permite el desarrollo de servidores web rápidos en JavaScript.
+ Los desarrolladores pueden crear servidores escalables sin utilizar subprocesos
+, mediante el uso de un modelo simplificado de programación dirigida por
+ eventos que utiliza devoluciones de llamada para indicar la finalización
+ de una tarea.
+ Node.js conecta la facilidad de un lenguaje de scripting (JavaScript) con
+ el poder de la programación en red de Unix.
+ 
+\end_layout
+
+\begin_layout Standard
+Node.js fue construido en el motor de JavaScript Google V8 ya que fue de
+ código abierto bajo la licencia BSD .
+ Es competente con los fundamentos de Internet como HTTP, DNS, TCP.
+ JavaScript también era un lenguaje muy conocido, lo que hacía que Node.js
+ fuera accesible para la comunidad de desarrollo web .
+\end_layout
+
+\begin_layout Subsubsection
+Soporte a la industria 
+\end_layout
+
+\begin_layout Standard
+Hay miles de bibliotecas de código abierto para Node.js, la mayoría de ellas
+ alojadas en el sitio web de npm .
+ La comunidad de desarrolladores de Node.js tiene dos listas de correo principale
+s y el canal IRC# node.js en freenode.
+ Existen múltiples conferencias y eventos de desarrolladores que son compatibles
+ con la comunidad Node.js, incluidos NodeConf, Node Interactive y Node Summit,
+ así como varios eventos regionales.
+\end_layout
+
+\begin_layout Standard
+La comunidad de código abierto ha desarrollado marcos web para acelerar
+ el desarrollo de aplicaciones.
+ Estos marcos incluyen Connect, Express.js, Socket.IO, Feathers.js , Koa.js,
+ Hapi.js, Sails.js, Meteor, Derby y muchos otros.
+ También se han creado varios paquetes para interactuar con otros idiomas
+ o entornos de tiempo de ejecución como Microsoft .NET.
+\end_layout
+
+\begin_layout Standard
+Los IDE de escritorio modernos proporcionan funciones de edición y depuración
+ específicamente para las aplicaciones Node.js.
+ Tales IDE incluyen Atom, corchetes, JetBrains WebStorm, Microsoft Visual
+ Studio (con Node.js Tools para Visual Studio, o TypeScript con definiciones
+ de nodo), NetBeans , Nodeclipse Enide Studio ( basado en Eclipse), y Visual
+ Studio Code.
+\end_layout
+
+\begin_layout Standard
+Ciertos IDE en línea basados en la web también son compatibles con Node.js,
+ como Codeanywhere, Codenvy, Cloud9 IDE, Koding y el editor de flujo visual
+ en Node-RED.
+\end_layout
+
+\begin_layout Subsection
+Historia
+\end_layout
+
+\begin_layout Standard
+Node.js fue escrito inicialmente por Ryan Dahl en 2009, aproximadamente trece
+ años después de la introducción del primer entorno de JavaScript del lado
+ del servidor, LiveWire Pro Web de Netscape.
+ La versión inicial solo era compatible con Linux y Mac OS X.
+ Su desarrollo y mantenimiento fue dirigido por Dahl y, posteriormente,
+ patrocinado por Joyent .
+\end_layout
+
+\begin_layout Standard
+Dahl criticó las posibilidades limitadas del servidor web más popular en
+ 2009, el Servidor HTTP Apache , para manejar muchas conexiones concurrentes
+ (hasta 10,000 o más) y la forma más común de crear código (programación
+ secuencial).
+\end_layout
+
+\begin_layout Standard
+Dahl demostró el proyecto en la JSConf europea inaugural el 8 de noviembre
+ de 2009.
+ Para ello combinó el motor de JavaScript V8 de Google , un ciclo de eventos
+ y una API de E/S de bajo nivel.
+\end_layout
+
+\begin_layout Standard
+En enero de 2010, se introdujo un administrador de paquetes para el entorno
+ Node.js llamado npm.
+ El administrador de paquetes facilita a los programadores publicar y compartir
+ el código fuente de las bibliotecas Node.js y está diseñado para simplificar
+ la instalación, actualización y desinstalación de las bibliotecas.
+\end_layout
+
+\begin_layout Standard
+En junio de 2011, Microsoft y Joyent implementaron una versión nativa para
+ Windows de Node.js.
+ La primera compilación de Node.js compatible con Windows se lanzó en julio
+ de 2011.
+\end_layout
+
+\begin_layout Standard
+En enero de 2012, Dahl se hizo a un lado, promoviendo al compañero de trabajo
+ y creador de npm Isaac Schlueter para gestionar el proyecto.
+ En enero de 2014, Schlueter anunció que Timothy J.
+ Fontaine lideraría el proyecto.
+\end_layout
+
+\begin_layout Standard
+En diciembre de 2014, Fedor Indutny comenzó io.js, una bifurcación de Node.js.
+ Debido al conflicto interno sobre el liderazgo de Joyent, io.js se creó
+ como una alternativa de gobierno abierto con un comité técnico independiente.
+ A diferencia de Node.js, los autores planeaban mantener io.js actualizado
+ con las últimas versiones del motor de JavaScript Google V8.
+\end_layout
+
+\begin_layout Standard
+En febrero de 2015, se anunció la intención de formar una Fundación Node.js
+ neutral.
+ Para junio de 2015, las comunidades Node.js y io.js votaron para trabajar
+ juntas bajo la Fundación Node.js.
+ 
+\end_layout
+
+\begin_layout Standard
+En septiembre de 2015, Node.js v0.12 y io.js v3.3 se fusionaron de nuevo en
+ Node v4.0.
+ Esta combinación trajo las características del V8 ES6 a Node.js y un ciclo
+ de lanzamiento de soporte a largo plazo.
+ A partir de 2016, el sitio web io.js recomienda que los desarrolladores
+ vuelvan a Node.js y que no se planifiquen más lanzamientos de io.js debido
+ a la fusión.
+\end_layout
+
+\begin_layout Subsection
+Versiones
+\end_layout
+
+\begin_layout Standard
+Las nuevas versiones principales de Node.js se eliminan de la rama maestra
+ de GitHub cada seis meses.
+ Las versiones con números pares se terminan en abril y las versiones con
+ números impares en octubre.
+ Cuando se lanza una nueva versión impar, la versión anterior anterior experimen
+ta la transición al Soporte a largo plazo (LTS), que le otorga a la versión
+ 18 meses de soporte activo desde la fecha en que se designó LTS.
+ Después de que expiren estos 18 meses, un lanzamiento de LTS recibe 12
+ meses adicionales de soporte de mantenimiento.
+ Una versión activa recibe backports de cambios ininterrumpidos unas semanas
+ después de su lanzamiento en la versión actual.
+ Una versión de mantenimiento solo recibe correcciones críticas y actualizacione
+s de documentación.
+ El Grupo de trabajo LTS gestiona la estrategia y la política en colaboración
+ con el Comité Directivo Técnico de la Fundación Node.js.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="2.2cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Version
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nombre clave
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fecha de lanzamiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estado de LTS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inicio de LTS activo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inicio de mantenimiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fin de mantenimiento
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+v0.10.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2013-03-11 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fin de ciclo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2015-10-01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016-10-31 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+v0.12.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2015-02-06 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fin de ciclo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016-04-01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016-12-31 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Argon
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2015-09-08 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fin de ciclo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2015-10-01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2017-04-01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2018-04-30 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2015-10-29 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No LTS
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016-06-30 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boron
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016-04-26 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fin de ciclo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016-10-18 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2018-04-30 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2019-04-30 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016-10-25 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No LTS
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2017-06-30 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Carbon
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2017-05-30 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mante-
+\end_layout
+
+\begin_layout Plain Layout
+nimiento 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2017-10-31 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2019-01-01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2019-12-31 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2017-10-01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No LTS 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2018-06-30 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dubnium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2018-04-24 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Activo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2018-10-30 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2020-04-01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2021-04-01 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2018-10-23 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No LTS 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2019-06-30 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12.x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erbium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2019-04-23 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pendiente 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2019-10-22 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2021-04-01 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2022-04-01 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Aspectos técnicos 
+\end_layout
+
+\begin_layout Subsubsection
+Hilos
+\end_layout
+
+\begin_layout Standard
+Node opera en un ciclo de eventos en un único hilo de ejecución, usando
+ llamadas E/S sin bloqueo, lo que permite miles de conexiones concurrentes
+ sin el costo de cambio de contexto en el hilo de procesamiento.
+ El diseño de compartir un solo hilo para todas las solicitudes está orientado
+ a la construcción de aplicaciones altamente concurrentes, donde cada tarea
+ de E/S debe utilizar una función callback.
+ 
+\end_layout
+
+\begin_layout Standard
+Una desventaja de esta arquitectura es que no se puede realizar escalamiento
+ vertical incrementando el numero de nucleos en el CPU del servidor sin
+ utilizar un módulo adicional, como un cluster por ejemplo.
+ Sin embargo, algunos desarrolladores pueden incrementar el número de hilos
+ por defecto en la librería libuv.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+V8
+\end_layout
+
+\begin_layout Standard
+V8 es el motor de ejecución de JavaScript inicialmente desarrollado para
+ el navegador Google Chrome.
+ Escrito en C++, V8 compila código fuente JavaScript en código maquina en
+ vez de interpretarlo en tiempo real.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Gestor de paquetes NPM 
+\end_layout
+
+\begin_layout Standard
+NPM es el gestor de paquetes por defecto para Node.js.
+ Permite de manera sencilla y eficiente la instalación de software Node.js
+ que se encuentren registrados en el registro de programas de NPM.
+ En este trabajo, se utilizarán varios paquetes de npm tales como: sentiment,
+ Express.js, twitter, y mongoose.
+\end_layout
+
+\begin_layout Subsubsection
+Ciclo de eventos
+\end_layout
+
+\begin_layout Standard
+Node.js se registra con el sistema operativo así el mismo notificará de las
+ conexiones o problemas a una función retorno.
+ Dentro de la ejecución de Node.js, cada conexión es una asignación en pila.
+ Tradicionalmente, los sistemas operativos utilizan procesos o hilos para
+ cada conexión, sin embargo, Node.js utiliza el ciclo de eventos para la
+ escalabilidad.
+ En contraste con otros servidores orientados a eventos, el ciclo de eventos
+ de Node no necesita ser llamado explícitamente, en cambio las funciones
+ retorno son definidas y el servidor automáticamente entra al ciclo de eventos
+ al finalizar una definición de retorno.
+ 
+\end_layout
+
+\begin_layout Section
+Express 
+\end_layout
+
+\begin_layout Standard
+Express.js, o simplemente Express, es un framework de desarrollo de aplicaciones
+ web para Node.js.
+ Fue liberado como software de código abierto con la Licencia MIT.
+ Está diseñado para la construcción de aplicaciones web y APIs.
+ Ha sido llamado como el framework de servidor estándar de facto para Node.js.
+ 
+\end_layout
+
+\begin_layout Standard
+El autor original, TJ Holowaychuk, lo describió como un servidor inspirado
+ en Sinatra.
+ Esto significa que es minimalista, y algunas de las varias funciones se
+ encuentran disponibles a través de plugins.
+ 
+\end_layout
+
+\begin_layout Subsection
+¿Qué popularidad tiene Node/Express?
+\end_layout
+
+\begin_layout Standard
+La popularidad de un framework web es importante porque es un indicador
+ de se continuará manteniendo y qué recursos tienen más probabilidad de
+ estar disponibles en términos de documentación, librerías de extensiones
+ y soporte técnico.
+\end_layout
+
+\begin_layout Standard
+No existe una medida disponible de inmediato y definitiva de la popularidad
+ de los frameworks de lado servidor (aunque sitios como Hot Frameworks intentan
+ asesorar sobre popularidad usando mecanismos como contar para cada plataforma
+ el número de preguntas sobre proyectos en GitHub y StackOverflow).
+ Una pregunta mejor es si Node y Express son lo "suficientemente populares"
+ para evitar los problemas de las plataformas menos populares.
+ ¿Continúan evolucionando? ¿Puedes conseguir la ayuda que necesitas? ¿Hay
+ alguna posibilidad de que consigas un trabajo remunerado si aprendes Express?
+\end_layout
+
+\begin_layout Standard
+De acuerdo con el número de compañías de perfil alto que usan Express, el
+ número de gente que contribuye al código base, y el número de gente que
+ proporciona soporte tanto libre como pagado, podemos entonces decir que
+ Express es un framework popular.
+\end_layout
+
+\begin_layout Standard
+Express proporciona mecanismos para:
+\end_layout
+
+\begin_layout Itemize
+Escritura de manejadores de peticiones con diferentes verbos HTTP en diferentes
+ caminos URL (rutas).
+ 
+\end_layout
+
+\begin_layout Itemize
+Integración con motores de renderización de "vistas" para generar respuestas
+ mediante la introducción de datos en plantillas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Establecer ajustes de aplicaciones web como qué puerto usar para conectar,
+ y la localización de las plantillas que se utilizan para renderizar la
+ respuesta.
+ 
+\end_layout
+
+\begin_layout Itemize
+Añadir procesamiento de peticiones "middleware" adicional en cualquier punto
+ dentro de la tubería de manejo de la petición.
+ 
+\end_layout
+
+\begin_layout Standard
+A pesar de que Express es en sí mismo bastante minimalista, los desarrolladores
+ han creado paquetes de middleware compatibles para abordar casi cualquier
+ problema de desarrollo web.
+ Hay librerías para trabajar con cookies, sesiones, inicios de sesión de
+ usuario, parámetros URL, datos POST, cabeceras de seguridad y muchos más.
+ Puedes encontrar una lista de paquetes middleware mantenida por el equipo
+ de Express en Express Middleware (junto con una lista de algunos de los
+ paquetes más populares de terceros).
+\end_layout
+
+\begin_layout Subsection
+¿Es Express dogmático?
+\end_layout
+
+\begin_layout Standard
+Los frameworks web frecuentemente se refieren a sí mismos como "dogmáticos"
+ ("opinionated") o "no dogmáticos" ("unopinionated").
+\end_layout
+
+\begin_layout Standard
+Los frameworks dogmáticos son aquellos que opinan acerca de la "manera correcta"
+ de gestionar cualquier tarea en particular.
+ Ofrecen soporte para el desarrollo rápido en un dominio en particular (resolver
+ problemas de un tipo en particular) porque la manera correcta de hacer
+ cualquier cosa está generalmente bien comprendida y bien documentada.
+ Sin embargo pueden ser menos flexibles para resolver problemas fuera de
+ su dominio principal, y tienden a ofrecer menos opciones para elegir qué
+ componentes y enfoques pueden usarse.
+\end_layout
+
+\begin_layout Standard
+Los framewoks no dogmáticos, en contraposición, tienen muchas menos restriccione
+s sobre el modo mejor de unir componentes para alcanzar un objetivo, o incluso
+ qué componentes deberían usarse.
+ Hacen más fácil para los desarrolladores usar las herramientas más adecuadas
+ para completar una tarea en particular, si bien al coste de que necesitas
+ encontrar esos componentes por uno mismo.
+\end_layout
+
+\begin_layout Standard
+Express es no dogmático, transigente.
+ Puede insertar casi cualquier middleware compatible que se desee dentro
+ de la cadena de manejo de la petición, en casi cualquier orden que se quiera.
+ Permite estructurar una app en un fichero o mútiples ficheros y usar cualquier
+ estructura de directorios.
+ 
+\end_layout
+
+\begin_layout Subsection
+¿Cómo es el código para Express?
+\end_layout
+
+\begin_layout Standard
+En sitios web o aplicaciones web dinámicas, que accedan a bases de datos,
+ el servidor espera a recibir peticiones HTTP del navegador (o cliente).
+ Cuando se recibe una petición, la aplicación determina cuál es la acción
+ adecuada correspondiente, de acuerdo a la estructura de la URL y a la informaci
+ón (opcional) indicada en la petición con los métodos POST o GET.
+ Dependiendo de la acción a realizar, puede que se necesite leer o escribir
+ en la base de datos, o realizar otras acciones necesarias para atender
+ la petición correctamente.
+ La aplicación ha de responder al navegador, normalmente, creando una página
+ HTML dinámicamente para él, en la que se muestre la información pedida,
+ usualmente dentro de un elemento especifico para este fin, en una plantilla
+ HTML.
+\end_layout
+
+\begin_layout Standard
+Express posee métodos para especificar que función ha de ser llamada dependiendo
+ del verbo HTTP usado en la petición (GET, POST, SET, etc.) y la estructura
+ de la URL ("ruta").
+ También tiene los métodos para especificar que plantilla ("view") o gestor
+ de visualización utilizar, donde están guardadas las plantillas de HTML
+ que han de usarse y como generar la visualización adecuada para cada caso.
+ El middleware de Express, puede usarse también para añadir funcionalidades
+ para la gestión de cookies, sesiones y usuarios, mediante el uso de parámetros,
+ en los métodos POST/GET.
+ Puede utilizarse además cualquier sistema de trabajo con bases de datos,
+ que sea soportado por Node (Express no especifica ningún método preferido
+ para trabajar con bases de datos).
+ 
+\end_layout
+
+\begin_layout Section
+MongoDB
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/cagadas/mongo.png
+	lyxscale 10
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la capa de datos, se utiliza la base de datos NoSQL MongoDB.
+ Utiliza esquemas de datos llamados colecciones, donde se almacenan en formato
+ BSON (Binary Javascript Object Notation).
+ 
+\end_layout
+
+\begin_layout Subsection
+Historia de MongoDB
+\end_layout
+
+\begin_layout Standard
+El desarrollo de MongoDB se inició a principios de 2007 cuando la compañía
+ estaba desarrollando una plataforma similar a Microsoft Azure como un servicio.
+ Esta era una empresa con sede en Nueva York nombre 10gen que ahora se cambió
+ su nombre a MongoDB Inc .
+ El desarrollo inicial se centró en la creación de una PaaS (Plataforma
+ como servicio), pero más tarde, en 2009, MongoDB llegó al mercado como
+ un servidor de base de datos de código abierto y fue mantenido por esta
+ organización.
+\end_layout
+
+\begin_layout Standard
+En marzo de 2010, lanzó su primera versión “product ready”, que era la versión
+ 1.4.
+ La última versión, así como la versión estable de MongoDB, es la versión
+ 4.0.10 que se lanzó el 31 de Mayo de 2019.
+ 
+\end_layout
+
+\begin_layout Subsection
+Características
+\end_layout
+
+\begin_layout Subsubsection
+Consultas Ad hoc 
+\end_layout
+
+\begin_layout Standard
+MongoDB admite búsquedas de campos, consultas de rango y expresiones regulares.
+ Las consultas pueden devolver campos específicos de documentos y también
+ incluir funciones de JavaScript definidas por el usuario.
+ Las consultas también se pueden configurar para devolver una muestra aleatoria
+ de resultados de un tamaño determinado.
+\end_layout
+
+\begin_layout Subsubsection
+Indexación
+\end_layout
+
+\begin_layout Standard
+Los campos de un documento MongoDB se pueden indexar con índices primarios
+ y secundarios.
+\end_layout
+
+\begin_layout Subsubsection
+Replicación
+\end_layout
+
+\begin_layout Standard
+MongoDB proporciona alta disponibilidad con conjuntos de réplicas.
+ Un conjunto de réplicas consta de dos o más copias de los datos.
+ Cada miembro del conjunto de réplicas puede actuar en el rol de réplica
+ primaria o secundaria en cualquier momento.
+ Todas las escrituras y lecturas se realizan en la réplica principal o secundari
+a en cualquier momento.
+ Todas las escrituras y lecturas se realizan en la réplica principal de
+ forma predeterminada.
+ Las réplicas secundarias mantienen una copia de los datos del primario
+ mediante la replicación incorporada.
+ Cuando una réplica primaria falla, el conjunto de réplicas realiza automáticame
+nte un proceso de elección para determinar qué secundaria debe convertirse
+ en la primaria.
+ Los secundarios pueden opcionalmente realizar operaciones de lectura, pero
+ esos datos solo son finalmente consistentes de forma predeterminada.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Equilibrio de carga
+\end_layout
+
+\begin_layout Standard
+MongoDB escala horizontalmente utilizando fragmentación.
+ El usuario elige una clave de fragmento, que determina cómo se distribuirán
+ los datos en una colección.
+ 
+\end_layout
+
+\begin_layout Standard
+Los datos se dividen en rangos (según la clave del fragmento) y se distribuyen
+ en múltiples fragmentos.
+ Alternativamente, la clave del fragmento puede ser codificada para asignar
+ un fragmento, lo que permite una distribución uniforme de los datos.
+\end_layout
+
+\begin_layout Standard
+MongoDB puede ejecutarse en varios servidores, equilibrando la carga o duplicand
+o datos para mantener el sistema en funcionamiento en caso de falla del
+ hardware.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Agregación
+\end_layout
+
+\begin_layout Standard
+MongoDB proporciona tres formas de realizar la agregación: el canal de agregació
+n, la función de reducción de mapas y los métodos de agregación de un solo
+ propósito.
+\end_layout
+
+\begin_layout Standard
+Map-reduce se puede utilizar para el procesamiento por lotes de datos y
+ las operaciones de agregación.
+ Pero según la documentación de MongoDB, el Canal de agregación proporciona
+ un mejor rendimiento para la mayoría de las operaciones de agregación.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Ejecución de JavaScript
+\end_layout
+
+\begin_layout Standard
+JavaScript se puede usar en consultas, funciones de agregación (como MapReduce
+ ) y se puede enviar directamente a la base de datos para que se ejecute.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Colecciones limitadas
+\end_layout
+
+\begin_layout Standard
+MongoDB admite colecciones de tamaño fijo denominadas colecciones con límite.
+ Este tipo de colección mantiene el orden de inserción y, una vez alcanzado
+ el tamaño especificado, se comporta como una cola circular.
+ 
+\end_layout
+
+\begin_layout Subsection
+¿Por qué MongoDB?
+\end_layout
+
+\begin_layout Enumerate
+Los datos proporcionados por la API de Twitter son recibidos en formato
+ JSON, mismo formato de almacenamiento de MongoDB.
+ Esto permite que la normalización de datos sea más sencilla.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La escalabilidad para manejar una alta cantidad de consultas en poco tiempo.
+\end_layout
+
+\begin_layout Enumerate
+Flexibilidad y simplicidad en los esquemas de datos.
+\end_layout
+
+\begin_layout Subsection
+Esquema de datos de este proyecto
+\end_layout
+
+\begin_layout Standard
+Cada tweet se encuentra almacenado como un documento en una colección llamada
+ Tweet.
+ El siguiente diagrama de clases UML se utiliza para representar la estructura
+ correspondiente del documento JSON:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename img/modelodedatos.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Siendo en la colección de Tweets: 
+\end_layout
+
+\begin_layout Itemize
+time-date: fecha y hora de emisión del tweet.
+ 
+\end_layout
+
+\begin_layout Itemize
+text: texto del tweet.
+ source: fuente del tweet (aplicación móvil, web, api, etc).
+\end_layout
+
+\begin_layout Itemize
+geo: coordenadas de donde fue emitido el tweet si la tuviera.
+ 
+\end_layout
+
+\begin_layout Itemize
+topic: tema de búsqueda, el mismo fue ingresado por el usuario al iniciar
+ el análisis de sentimientos.
+ 
+\end_layout
+
+\begin_layout Standard
+En la colección anidada Sentiment: 
+\end_layout
+
+\begin_layout Itemize
+score: suma de los valores de sentimiento de los tokens.
+ 
+\end_layout
+
+\begin_layout Itemize
+comparative: score del tweet dividido en cantidad de tokens.
+ 
+\end_layout
+
+\begin_layout Itemize
+tokens: array de todos los tokens del tweet.
+ 
+\end_layout
+
+\begin_layout Itemize
+words: array de todas las palabras del tweet.
+ 
+\end_layout
+
+\begin_layout Itemize
+positive: array de todas los tokens positivos.
+ 
+\end_layout
+
+\begin_layout Itemize
+negative: array de todas los tokens negativos.
+ 
+\end_layout
+
+\begin_layout Standard
+En la colección anidada User: 
+\end_layout
+
+\begin_layout Itemize
+id: id del usuario de twitter.
+ 
+\end_layout
+
+\begin_layout Itemize
+name: nombre del usuario (identificador con @).
+ 
+\end_layout
+
+\begin_layout Itemize
+screen_name: nombre del usuario a mostrar en su página de perfil.
+ 
+\end_layout
+
+\begin_layout Itemize
+location: ubicación (ciudad y/o país) del usuario.
+ 
+\end_layout
+
+\begin_layout Itemize
+followers_count: cantidad de seguidores.
+ 
+\end_layout
+
+\begin_layout Itemize
+friends count: cantidad de amigos.
+ 
+\end_layout
+
+\begin_layout Itemize
+lang: lenguaje del usuario.
+ 
+\end_layout
+
+\begin_layout Section
+API de Twitter
+\end_layout
+
+\begin_layout Standard
+Una interfaz de programación de aplicaciones ( API ) es un conjunto de definicio
+nes de subrutinas, protocolos de comunicación y herramientas para crear
+ software.
+ En términos generales, es un conjunto de métodos de comunicación claramente
+ definidos entre varios componentes.
+ Una buena API hace que sea más fácil desarrollar un software al proporcionar
+ todos los bloques de construcción, que luego son ensamblados por el programador
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+Una API puede ser para un sistema basado en web, sistema operativo , sistema
+ de base de datos, hardware de computadora o biblioteca de software .
+\end_layout
+
+\begin_layout Standard
+En el caso de la API de Twitter, estamos ante la presencia de una API Web,
+ en el cual las consultas son hechas a través de solicitudes GET o POST
+ a la misma.
+ 
+\end_layout
+
+\begin_layout Standard
+Entre las funciones que proporciona la API de Twitter para los desarrolladores
+ tenemos: 
+\end_layout
+
+\begin_layout Enumerate
+Integrar Twitter a nuestra aplicación web.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Twittear o retwittear desde nuestra aplicación automáticamente.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Realizar campañas de publicidades.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Capturar tweets en tiempo real, o streaming.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Búsqueda de tweets históricos (limitado para usuarios gratuitos).
+ 
+\end_layout
+
+\begin_layout Subsection
+Objeto Tweet
+\end_layout
+
+\begin_layout Standard
+Los tweets son el bloque de construcción atómico básico de todas las cosas
+ de Twitter.
+ Los tweets son también conocidos como “actualizaciones de estado.” El objeto
+ Tweet tiene una larga lista de 'nivel raíz' atributos, incluidos los atributos
+ fundamentales tales como id, created_at, y text.
+ Los objetos de tweet son también el objeto "padre" de varios objetos hijos.
+ Los objetos anidados incluyen user, entities y extended_entities.
+ Los tweets que están etiquetados geográficamente tendrán un objeto place
+ secundario.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Diccionario de datos del objeto Tweet
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="32" columns="2">
+<features tabularvalignment="middle" tabularwidth="10cm">
+<column alignment="left" valignment="top" width="5cm">
+<column alignment="left" valignment="top" width="3cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Atributo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+created_at 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+id 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Int64
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+id_str 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+text 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+source 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+truncated 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boolean
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+in_reply_to_status_id 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Int64
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+in_reply_to_status_id_str 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+in_reply_to_user_id
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Int64
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+in_reply_to_user_id_str 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+in_reply_to_screen_name 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+user 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User object
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+coordinates
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coordinates
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+coordinates
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Places
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+quoted_status_id 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Int64
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+quoted_status_id_str 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+is_quote_status 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boolean
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+quoted_status 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tweet
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+retweeted_status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tweet
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+quote_count 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Integer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+reply_count
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Int
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+retweet_count 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Int
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+favorite_count 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Integer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+entities 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entities
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+extended_entities 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Extended Entities
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+favorited 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boolean
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+retweeted 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boolean
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+possibly_sensitive 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boolean
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+filter_level 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+lang 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+String
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+matching_rules 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Array of Rule Objects 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sentiment
+\end_layout
+
+\begin_layout Standard
+Sentiment es un paquete de software alojado en NPM que permite el análisis
+ de sentimientos de cadena de textos utilizando el listado de palabras AFINN-165
+ y el Emoji World Sentiment Ranking.
+ 
+\end_layout
+
+\begin_layout Standard
+Entre las características principales que lo destacan es: 
+\end_layout
+
+\begin_layout Enumerate
+Licencia MIT.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Análisis de sentimiento en ingles.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Posibilidad de agregar nuevos lenguajes.
+\end_layout
+
+\begin_layout Enumerate
+Opciones de benchmark.
+ 
+\end_layout
+
+\begin_layout Subsection
+Funcionamiento
+\end_layout
+
+\begin_layout Standard
+A la cadena de texto a analizar se le aplica un proceso de tokenización.
+ Esto significa dividir el conjunto de caracteres en “tokens”, es decir,
+ subcadenas de texto formadas a partir de separar la cadena en los espacios,
+ y eliminando los caracteres no alfanuméricos.
+ 
+\end_layout
+
+\begin_layout Standard
+Cada uno de los tokens obtenidos es comparado con su valor en el diccionario
+ AFFIN-165 y el Emoji World Sentiment Ranking.
+ En base a ello, cada token obtiene un valor de sentimiento, que es un valor
+ numérico entre -5 y 5.
+ La suma de los valores de sentimientos corresponden al puntaje S: 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename img/formulaS.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y siendo el valor comparativo respecto a la cantidad de tokens: 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename img/formulaC.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Prueba de Sentball
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+#GameOfThrones
+\end_layout
+
+\begin_layout Standard
+El día 21 de Abril del año 2019 se realizó la captura y análisis de sentimientos
+ de los tweets enviados en tiempo real durante la emisión del segundo capítulo
+ de la octava temporada de la popular serie de televisión “Game of Thrones”.
+ Para ello, se utilizó Sentball para capturar aquellos tweets con el hashtag
+ “#gameofthrones”.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename img/DIAGRAMA.png
+	lyxscale 30
+	scale 37
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sentball envía una petición POST por medio de la API de Twitter del tipo
+ “stream statuses/filter” con el hashtag “#Gameofthrones”.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto abre un canal de streaming, donde por cada tweet que coincida con el
+ término indicado es transmitido en tiempo real a Sentball en formato json.
+ Estos datos de acuerdo a la documentación de Twitter, es llamado el “Objeto
+ Tweet”, que contiene todas los datos almacenados de dicho tweet, como sería
+ el texto, autor del mismo, datos de geolocalización, plataforma desde donde
+ fue enviado y más.
+ 
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, uno de los Tweets capturados fue el siguiente: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename img/TWEET EJEMPLO.png
+	lyxscale 30
+	scale 37
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uno podría pensar que es difícil obtener datos estructurados a partir de
+ algo tan cotidiano como un Tweet de una persona que espera su pareja para
+ ver su serie favorita, sin embargo Sent Ball procesa este tweet con Sentiment
+ tokenizado y calculando su valor de sentimiento.
+ 
+\end_layout
+
+\begin_layout Standard
+Esto puede ser visto en la siguiente captura de lo almacenado en la base
+ de datos:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename img/DBTWEET EJEMPLO1.png
+	lyxscale 30
+	scale 120
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/DBTWEET EJEMPLO2.png
+	lyxscale 30
+	scale 120
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Según el diccionario AFFIN-165, el único token que corresponde a una palabra
+ de sentimiento no neutral es “constrained” (atada), con un puntaje de -2.
+\end_layout
+
+\begin_layout Standard
+Esto nos da un puntaje de -2, y un valor comparativo de -0,09.
+\end_layout
+
+\begin_layout Standard
+Siguiendo el esquema de datos de la colección Tweet, los valores son almacenados
+ en nuestra base de datos de MongoDB.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Resultados
+\end_layout
+
+\begin_layout Standard
+Durante la hora de duración del episodio se han capturado 58020 tweets con
+ el hashtag #Gameofthrones.
+ 
+\end_layout
+
+\begin_layout Standard
+De los cuales: 
+\end_layout
+
+\begin_layout Itemize
+27972 tienen un valor de sentimientos neutro (igual a 0).
+ 
+\end_layout
+
+\begin_layout Itemize
+30048 tienen un valor de sentimientos no neutro (distinto de 0).
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+15710 tienen un valor de sentimientos positivo.
+ 
+\end_layout
+
+\begin_layout Itemize
+14338 tienen un valor de sentimientos negativo.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+En un diagrama de torta, esto puede ser graficado por porcentajes de la
+ siguiente manera: 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename img/TORTA.png
+	lyxscale 30
+	scale 33
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tomando los intervalos para clasificar de mejor manera los sentimientos
+ siendo: 
+\end_layout
+
+\begin_layout Enumerate
+Muy negativos entre -5 y -3.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Negativos entre -3 y 0.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Neutro 0.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Positivo entre 0 y 3.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Muy positivos entre 3 y 5.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename img/BARRAS.png
+	lyxscale 30
+	scale 33
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos apreciar que la distribución de sentimientos corresponde a lo que
+ uno esperaría, siendo los extremos poco frecuentes, y elevando la misma
+ en los valores neutros.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Conclusión
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
+\begin_layout Standard
+De este trabajo se puede concluir que:
+\end_layout
+
+\begin_layout Enumerate
+El análisis de sentimientos es una herramienta sumamente potente con gran
+ panorama a futuro.
+ 
+\end_layout
+
+\begin_layout Enumerate
+SentBall puede cumplimentar los objetivos trazados inicialmente, que eran
+ la captura de Tweets en tiempo real y su correspondiente análisis de sentimient
+o.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Evolución a futuro
+\end_layout
+
+\begin_layout Enumerate
+Mejora del diccionario de español utilizando expresiones regulares para
+ reconocer patrones como por ejemplo palabras con género.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Mejora de la interfaz de usuario.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Bibliografía
+\end_layout
+
+\begin_layout Enumerate
+IBM Big Data & Analytics Hub.
+ http://www.ibmbigdatahub.com/infographic/four-vs-big-data 
+\end_layout
+
+\begin_layout Enumerate
+Bo Pang and Lillian Lee.
+ Opinion mining and sentiment analysis.
+ Foundations and Trends in Information Retrieval 2 (2008), no.
+ 1-2, 1–135.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Fawcett, Robin P.
+ y Gordon H.
+ tucker, 1990: “Demonstration of GenesYs: a very large, semantically based
+ systemic functional grammar” en Proceedings of the 13th International Conferenc
+e on Computational Linguistics, Helsinki, 47-49.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Ferrari, Giacomo, 2004: “state of the art in computational linguistics”
+ en Piet van sterkenBurg (ed.): Linguistics today: facing a greater challenge,
+ ámsterdam-Filadelfia: John Benjamins, 163-186.
+\end_layout
+
+\begin_layout Enumerate
+Fillmore, charles J., 1968: “The case for case” en emmon W.
+ Bach y Robert T.
+ harms (ed.): Universals in linguistic theory, nueva York: Holt, Rinehart
+ and Winston, 1-88.
+ 
+\end_layout
+
+\begin_layout Enumerate
+https://developer.twitter.com/en/docs.html 
+\end_layout
+
+\begin_layout Enumerate
+https://docs.npmjs.com/ 
+\end_layout
+
+\begin_layout Enumerate
+https://www.npmjs.com/package/sentiment 
+\end_layout
+
+\begin_layout Enumerate
+https://www.npmjs.com/package/twitter 
+\end_layout
+
+\begin_layout Enumerate
+https://docs.mongodb.com/ 
+\end_layout
+
+\begin_layout Enumerate
+https://mongoosejs.com/docs/ https://expressjs.com/en/4x/api.html 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+ANEXO
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Capturas de pantalla de Sentball
+\end_layout
+
+\begin_layout Standard
+Sentball capturando y almacenando tweets analizados en la base de datos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Graphics
+	filename img/anexo/captura1.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interfaz en front-end de Sentball al momento de buscar #gameofthrones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura2.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interfaz de front-end por defecto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura3.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esquema de datos de Tweet.
+ Captura del código.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura4.png
+	lyxscale 60
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Filtrado de tweets con el hashtag #gameofthrones que tengan un score mayor
+ a 3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura5.png
+	lyxscale 60
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Filtrado de tweets con el hashtag #gameofthrones que tengan un score no
+ igual a 0.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura6.png
+	lyxscale 60
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Filtrado de tweets con el hashtag #gameofthrones que tengan un score menor
+ a -3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura8.png
+	lyxscale 60
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Filtrado de tweets con el hashtag #gameofthrones que tengan un score igual
+ a 0.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura9.png
+	lyxscale 70
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Filtrado de tweets con el hashtag #gameofthrones que tengan un score mayor
+ a 0.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura10.png
+	lyxscale 70
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Filtrado de tweets con el hashtag #gameofthrones que tengan un score menor
+ a 0.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura11.png
+	lyxscale 70
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Video de presentación en línea
+\end_layout
+
+\begin_layout Standard
+El video de la presentación de Sentball se encuentra disponible en línea
+ en la plataforma de YouTube.
+ Para acceder debe ingresar al siguiente link o escaneando el código QR
+ a continuación: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.youtube.com/watch?v=AesZUVBbGb4"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/QR.png
+	lyxscale 30
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anexo/captura YT.png
+	lyxscale 30
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

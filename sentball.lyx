@@ -1,15 +1,10 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass scrartcl
-\begin_preamble
-% Added by lyx2lyx
-\renewcommand{\textendash}{--}
-\renewcommand{\textemdash}{---}
-\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language spanish-mexico
@@ -26,6 +21,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -55,6 +52,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -63,7 +61,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -1068,7 +1069,254 @@ Los sentimientos generados por la serie Game Of Thrones serán en su mayoría
 \end_layout
 
 \begin_layout Section
+Diseño metodológico de la investigación
+\end_layout
 
+\begin_layout Subsection
+Según la finalidad
+\end_layout
+
+\begin_layout Standard
+Investigación de finalidad descriptiva, debido a que se describen y clasifican
+ los sentimientos generados por la emisión de un capitulo de una serie de
+ televisión.
+\end_layout
+
+\begin_layout Subsection
+Según la dimensión temporal
+\end_layout
+
+\begin_layout Standard
+Investigación transversales, se realiza una única medición en un momento
+ determinado por medio de un software desarrollado especificamente para
+ dicha finalidad.
+\end_layout
+
+\begin_layout Subsection
+Según la lógica
+\end_layout
+
+\begin_layout Standard
+Investigación cuantitativa, se explica el fenómeno haciendo una interpretación
+ de datos numéricos.
+\end_layout
+
+\begin_layout Subsection
+Según la direccionalidad
+\end_layout
+
+\begin_layout Standard
+Investigación ?????, los hechos ocurren en el momento de la investigación.
+\end_layout
+
+\begin_layout Subsection
+Unidad de análisis
+\end_layout
+
+\begin_layout Standard
+Mensajes enviados a la red social Twitter que sean referidos a la serie
+ de televisión Game Of Thrones.
+\end_layout
+
+\begin_layout Subsection
+Unidad de observación
+\end_layout
+
+\begin_layout Standard
+Usuarios de la red social Twitter que envien mensajes durante la emisión
+ del capitulo.
+\end_layout
+
+\begin_layout Subsection
+Universo
+\end_layout
+
+\begin_layout Standard
+Todas las personas que se encuentren viendo el capitulo de la serie al momento
+ de la emisión.
+\end_layout
+
+\begin_layout Subsection
+Muestra
+\end_layout
+
+\begin_layout Standard
+58.020 (ciencuenta y ocho mil veinte) tweets.
+\end_layout
+
+\begin_layout Subsection
+Criterio de selección
+\end_layout
+
+\begin_layout Standard
+Aquellos tweets que incluyen la palabra 
+\begin_inset Quotes qld
+\end_inset
+
+#gameofthrones
+\begin_inset Quotes qrd
+\end_inset
+
+ capturados entre las 22:00 y 23:00 hs del día 21 de abril del 2019.
+\end_layout
+
+\begin_layout Part
+Análisis de los datos
+\end_layout
+
+\begin_layout Standard
+Durante la hora de duración del episodio se han capturado 58020 tweets con
+ el hashtag #Gameofthrones.
+ 
+\end_layout
+
+\begin_layout Standard
+De los cuales: 
+\end_layout
+
+\begin_layout Itemize
+27972 tienen un valor de sentimientos neutro (igual a 0).
+ 
+\end_layout
+
+\begin_layout Itemize
+30048 tienen un valor de sentimientos no neutro (distinto de 0).
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+15710 tienen un valor de sentimientos positivo.
+ 
+\end_layout
+
+\begin_layout Itemize
+14338 tienen un valor de sentimientos negativo.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+En un diagrama de torta, esto puede ser graficado por porcentajes de la
+ siguiente manera:
+\end_layout
+
+\begin_layout Standard
+//////DIAGRAMA//////
+\end_layout
+
+\begin_layout Standard
+Tomando los intervalos para clasificar de mejor manera los sentimientos
+ siendo: 
+\end_layout
+
+\begin_layout Enumerate
+Muy negativos entre -5 y -3.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Negativos entre -3 y 0.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Neutro 0.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Positivo entre 0 y 3.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Muy positivos entre 3 y 5.
+\end_layout
+
+\begin_layout Standard
+///////DIAGRAMA BARRAS///////
+\end_layout
+
+\begin_layout Standard
+Podemos apreciar que la distribución de sentimientos corresponde a lo que
+ uno esperaría, siendo los extremos poco frecuentes, y elevando la misma
+ en los valores neutros.
+\end_layout
+
+\begin_layout Part
+Conclusión
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
+\begin_layout Standard
+..........
+\end_layout
+
+\begin_layout Part
+Bibliografía
+\end_layout
+
+\begin_layout Enumerate
+IBM Big Data & Analytics Hub.
+ http://www.ibmbigdatahub.com/infographic/four-vs-big-data 
+\end_layout
+
+\begin_layout Enumerate
+Bo Pang and Lillian Lee.
+ Opinion mining and sentiment analysis.
+ Foundations and Trends in Information Retrieval 2 (2008), no.
+ 1-2, 1–135.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Fawcett, Robin P.
+ y Gordon H.
+ tucker, 1990: “Demonstration of GenesYs: a very large, semantically based
+ systemic functional grammar” en Proceedings of the 13th International Conferenc
+e on Computational Linguistics, Helsinki, 47-49.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Ferrari, Giacomo, 2004: “state of the art in computational linguistics”
+ en Piet van sterkenBurg (ed.): Linguistics today: facing a greater challenge,
+ ámsterdam-Filadelfia: John Benjamins, 163-186.
+\end_layout
+
+\begin_layout Enumerate
+Fillmore, charles J., 1968: “The case for case” en emmon W.
+ Bach y Robert T.
+ harms (ed.): Universals in linguistic theory, nueva York: Holt, Rinehart
+ and Winston, 1-88.
+ 
+\end_layout
+
+\begin_layout Enumerate
+https://developer.twitter.com/en/docs.html 
+\end_layout
+
+\begin_layout Enumerate
+https://docs.npmjs.com/ 
+\end_layout
+
+\begin_layout Enumerate
+https://www.npmjs.com/package/sentiment 
+\end_layout
+
+\begin_layout Enumerate
+https://www.npmjs.com/package/twitter 
+\end_layout
+
+\begin_layout Enumerate
+https://docs.mongodb.com/ 
+\end_layout
+
+\begin_layout Enumerate
+https://mongoosejs.com/docs/ https://expressjs.com/en/4x/api.html
 \end_layout
 
 \end_body
