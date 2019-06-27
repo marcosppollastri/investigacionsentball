@@ -1,0 +1,1075 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+% Added by lyx2lyx
+\renewcommand{\textendash}{--}
+\renewcommand{\textemdash}{---}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Análisis de Sentimientos de la serie de televisión Game Of Thrones utilizando
+ Node.js y Twitter
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset VSpace 1.2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+UNIVERSIDAD NACIONAL DE LA RIOJA
+\end_layout
+
+\begin_layout Standard
+\align center
+SEDE CAPITAL
+\end_layout
+
+\begin_layout Standard
+\align center
+LIC.
+ EN SISTEMAS DE INFORMACIÓN
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset VSpace 1.2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+ANL.
+ SIST.
+ MARCOS J.
+ PEÑA POLLASTRI
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset VSpace 1.1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset VSpace 0.75cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Note that this is the date that the degree is *conferred* (should be one
+ of January, April, June, September, or November.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+does not need to be all uppercase
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Resumen
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Temas
+\end_layout
+
+\begin_layout Enumerate
+Procesamiento Natural del Lenguaje.
+\end_layout
+
+\begin_layout Enumerate
+Análisis de sentimientos.
+\end_layout
+
+\begin_layout Enumerate
+Sistemas web basados en eventos.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Bases de datos no relacionales.
+\end_layout
+
+\begin_layout Section
+Problema
+\end_layout
+
+\begin_layout Standard
+¿Qué sentimientos se generan durante la emisión de un cápitulo del a serie
+ de televisión Game Of Thrones en los usuarios de la red social Twitter
+ de habla ingles, durante el año 2019?
+\end_layout
+
+\begin_layout Section
+Marco Teórico
+\end_layout
+
+\begin_layout Subsection
+Procesamiento de Lenguaje Natural
+\end_layout
+
+\begin_layout Standard
+El procesamiento del lenguaje natural PLN, o NLP del idioma inglés Natural
+ Language Processing.
+ es un campo de las ciencias de las computacion, inteligencia artificial
+ y lingüística que estudia las interacciones entre las computadoras y el
+ lenguaje humano.
+ El PLN se ocupa de la formulación e investigación de mecanismos eficaces
+ computacionalmente para la comunicación entre personas y máquinas por medio
+ del lenguaje natural, es decir, de las lenguas del mundo.
+ Por medio de estos algoritmos o procesos matemáticos traducen datos (lenguaje
+ natural) en el cerebro de la máquina para que éste determine patrones y
+ pueda generar una respuesta.
+ Mucho dependerá del tipo, calidad y cantidad de datos de entrenamiento
+ para determinar el éxito de respuesta de la máquina.
+ Por ejemplo, para entrenar a Google Home, el tipo de datos que se utilizó
+ fue la voz humana y seguramente con una extensa variedad de tonalidades
+ y registros de voz (calidad y cantidad) provenientes de hombres, mujeres,
+ niños, adultos, extranjeros y locales.
+ 
+\end_layout
+
+\begin_layout Standard
+El PLN no trata de la comunicación por medio de lenguas naturales de una
+ forma abstracta, sino de diseñar mecanismos para comunicarse que sean eficaces
+ computacionalmente, que se puedan realizar por medio de programas que ejecuten
+ o simulen la comunicación.
+ Los modelos aplicados se enfocan no solo a la comprensión del lenguaje
+ de por sí, sino a aspectos generales cognitivos humanos y a la organización
+ de la memoria.
+ El lenguaje natural sirve solo de medio para estudiar estos fenómenos.
+ Hasta la década de 1980, la mayoría de los sistemas de PLN se basaban en
+ un complejo conjunto de reglas diseñadas a mano.
+ A partir de finales de 1980, sin embargo, hubo una revolución en PLN con
+ la introducción de algoritmos de aprendizaje automático para el procesamiento
+ del lenguaje.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Aplicaciones del Procesamiento de Lenguaje Natural
+\end_layout
+
+\begin_layout Standard
+Las aplicaciones del PLN son muy variadas, ya que su alcance es muy grande,
+ algunas de las aplicaciones son: 
+\end_layout
+
+\begin_layout Itemize
+Traducción automática.
+\end_layout
+
+\begin_layout Itemize
+Recuperación de la información.
+\end_layout
+
+\begin_layout Itemize
+Extracción de Información y resúmenes.
+\end_layout
+
+\begin_layout Itemize
+Resolución cooperativa de problemas.
+\end_layout
+
+\begin_layout Itemize
+Tutores inteligentes.
+\end_layout
+
+\begin_layout Itemize
+Reconocimiento de Voz.
+\end_layout
+
+\begin_layout Subsection
+Análisis de sentimientos
+\end_layout
+
+\begin_layout Standard
+El análisis de sentimientos es una tarea incluida en el ámbito del Procesamiento
+ de Lenguaje Natural o NLP (Natural Language Processing).
+ Su objetivo es encontrar contenido subjetivo en los textos de entrada.
+ El análisis de sentimientos busca extraer opiniones y la polaridad de éstas,
+ mediante la identificación de características que determinan cuán positivo
+ o negativo es el texto.
+\end_layout
+
+\begin_layout Standard
+El análisis de sentimientos ha sido considerado inicialmente como una subdiscipl
+ina de clasificación basada en la opinión.
+ La técnica en general puede estar orientada a tres grandes tipos de tareas:
+ 
+\end_layout
+
+\begin_layout Itemize
+Clasificación de sentimientos: realizar una clasificación de un conjunto
+ de opiniones en tres categorías: positivas, negativas o neutrales.
+ Presenta desafíos adicionales el hecho de que las opiniones se encuentran
+ en múltiples idiomas o provienen de varios dominios, como biología, sociología,
+ etc.
+ 
+\end_layout
+
+\begin_layout Itemize
+Clasificación de subjetividad: determinar si una oración es subjetiva u
+ objetiva.
+ Una oración objetiva contiene información imparcial, mientras que una oración
+ subjetiva contiene información de carácter personal como opiniones.
+ 
+\end_layout
+
+\begin_layout Itemize
+Resumen de opinión: permitir extraer las características principales que
+ son compartidas por uno o más documentos y el sentimiento acerca de estas
+ características.
+ 
+\end_layout
+
+\begin_layout Standard
+En el análisis de redes sociales, particularmente en análisis de sentimientos
+ a partir del estudio de tweets para obtener su polaridad, existen dos métodos
+ que son los más populares.
+ El primero de ellos utiliza el enfoque del aprendizaje computacional (machine-l
+earning approaches) y el segundo utiliza diccionarios léxicos.
+\end_layout
+
+\begin_layout Standard
+El aprendizaje computacional analiza la información automáticamente de forma
+ supervisada, basándose en conjuntos de entrenamiento que son utilizados
+ para catalogar al resto de las opiniones encontradas en la web, realizando
+ pruebas y luego validandose.
+ Las principales técnicas de este método son: Support Vector Machines (SVM),
+ Naive Bayes y Clasificadores de Máxima Entropía.
+ En estas técnicas se utiliza la categoría gramatical de las palabras, la
+ presencia y frecuencia de algunos términos y su composición semántica.
+ Sin embargo, la mayoría de estos métodos son acompañados de algún diccionario
+ que entrega información a priori de los términos para obtener las polaridades
+ respectivas.
+ En algunos casos, estos diccionarios son realizados por personas y en otros
+ se ocupa un sistema semiautomático.
+ El método de diccionarios léxicos se basa en una lista de palabras con
+ un determinado peso y/o categoría emocional.
+ Estos diccionarios presentan principalmente adjetivos, que son los que
+ aportan mayor información al momento de analizar los sentimientos, aunque
+ también incluye verbos, adverbios y sustantivos.
+ 
+\end_layout
+
+\begin_layout Standard
+La mayor cantidad de versiones de diccionarios está en idioma inglés aunque
+ existen algunas en español, pero en general en versión beta.
+ Éstos permiten determinar si una frase es negativa o positiva dependiendo
+ de la cantidad de palabras presentes en el diccionario y de la fuerza de
+ su sentimiento.
+ Uno de los diccionarios más completos es LIWC, presente una versión en
+ inglés bastante completa y una en español que está aún en etapa de desarrollo.
+ En este caso, las palabras son etiquetadas en una categoría determinada
+ y además se les asigna una ponderación.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Tipos de análisis de sentimiento
+\end_layout
+
+\begin_layout Standard
+A la hora de extraer esta información, hay una gran variedad de métodos
+ y algoritmos dependiendo del nivel de granularidad del análisis que queramos
+ llevar a cabo, Se distinguen tres niveles: nivel de documento, de oración
+ o de aspecto.
+ 
+\end_layout
+
+\begin_layout Standard
+El análisis a nivel de documento determina el sentimiento general expresado
+ en un texto, mientras que el análisis a nivel de frase lo especifica para
+ cada una de las oraciones del texto.
+ Sin embargo, estos dos tipos de análisis no profundizan en detalle el elemento
+ que a las personas les gusta o no.
+ No especifican sobre qué es la opinión, ya que considerando la opinión
+ general de un objeto como positiva (o negativa) no significa que el autor
+ tenga una opinión positiva (o negativa) de todos los aspectos de dicho
+ objeto.
+ 
+\end_layout
+
+\begin_layout Standard
+Para este trabajo nos enfocamos en realizar un análisis a nivel de documento,
+ ya que, debido al limite en los mensajes, los autores suelen ser concisos
+ y van directo al grano sin tener la posibilidad de incluir varios aspectos
+ diferenciados en un solo tweet.
+ Por esta razón, usar el tweet como unidad de análisis parece proveer un
+ nivel de granularidad adecuado para hacer un análisis de sentimiento desglosado.
+\end_layout
+
+\begin_layout Subsubsection
+Análisis a nivel de documento
+\end_layout
+
+\begin_layout Standard
+Considerada como una de las tareas más simples de la minerıa de opiniones,
+ el análisis a nivel de documento apunta a clasificar la opinión de un documento
+, en este caso un tweet.
+ Esta tarea no considera los detalles en cuanto a entidades o aspectos,
+ sino que considera el documento como un todo, el cual será etiquetado como
+ positivo o negativo.
+ Esta puede ser considerada como una tarea tradicional de clasificación
+ de texto, donde las clases son las diferentes orientaciones en cuanto a
+ los sentimientos.
+ No obstante, para asegurar que este tipo de análisis tenga sentido asumimos
+ que cada documento expresa una única opinión sobre una única entidad.
+ Si bien esto puede parecer una limitación, porque en un tweet uno podrıa
+ expresar más de una opinión hacia distintas entidades, en la práctica produce
+ resultados positivos, ya que los usuarios suelen enfocarse en un único
+ aspecto en cada tweet.
+ Seguramente en otros contextos, o si no estuviera limitado el largo de
+ los mensajes, sería una buena idea considerar sistemas de análisis más
+ complejos que permitan realizar un análisis con mayor granularidad.
+ Las palabras que conforman las opiniones son el factor determinante en
+ el análisis de sentimientos también es una buena opción utilizar métodos
+ de aprendizaje basados en el uso de lexicones.
+ Estos son diccionarios que contienen listados de palabras etiquetadas con
+ el sentimiento asociado correspondiente, en algunos casos por un valor
+ que también indica la intensidad del mismo.
+ Luego, dada una opinión, simplemente podemos buscar el valor de todas las
+ palabras que la componen y sumar el valor asociado para finalmente clasificar
+ la opinión como positiva o negativa según corresponda.
+ 
+\end_layout
+
+\begin_layout Subsection
+La red social Twitter
+\end_layout
+
+\begin_layout Standard
+Twitter se creó en 2006 como una red social en base a contenido con forma
+ de SMS.
+ Desde entonces ha crecido rápidamente ganando mucha popularidad en los
+ últimos años.
+ Según los datos oficiales que figuran en su web son aproximadamente 326
+ millones de usuarios activos por mes que acceden diariamente para compartir
+ experiencias y opiniones convirtiéndose así en una herramienta ideal para
+ la realización de encuestas y sondeos.
+ 
+\end_layout
+
+\begin_layout Standard
+Twitter permite a los usuarios enviar y leer mensajes de texto de hasta
+ 140 caracteres, conocidos como tweets.
+ Este sitio es una gran fuente de información subjetiva en tiempo real ya
+ que estos millones de usuarios comparten opiniones sobre diferentes aspectos
+ de su vida cotidiana.
+ Twitter ha sido usada para una variedad de propósitos en diferentes industrias
+ y situaciones.
+ Por ejemplo, los usuarios pueden encontrar o emitir opiniones sobre un
+ producto o servicio de su interés, las compañías y figuras públicas pueden
+ controlar su reputación en línea, se puede conocer la opinión de cada usuario
+ respecto a implementación de políticas públicas,campañas de difusión, entreteni
+miento, entre otras.
+ 
+\end_layout
+
+\begin_layout Standard
+Twitter permite identificar estos temas a través de los denominados hashtag
+ o etiquetas, que se caracterizan por comenzar con el carácter # y una cadena
+ de caracteres a continuación formada por una o varias palabras concatenadas.
+ Esta etiqueta funciona como metadato y permite que los tweets se añadan
+ a una lista de mensajes con hashtag similares.
+ Esto permite a los usuarios obtener resultados rápidamente sobre un mismo
+ tema.
+ 
+\end_layout
+
+\begin_layout Subsection
+Node.JS
+\end_layout
+
+\begin_layout Standard
+Node.Js o también conocido como Node, es un entorno de ejecución de Javascript
+ en backend multiplataforma, código abierto.
+ Esto permite la ejecución de código Javascript fuera del navegador web,
+ y poder escribir programas de lineas de comando o scripting para servidores
+ (como por ejemplo la creación de paginas web dinámicas).
+ 
+\end_layout
+
+\begin_layout Standard
+Sumado a esto, Node.js representa el paradigma “Javascript en todos lados”,
+ unificando el desarrollo de las aplicaciones web en un solo lenguaje, en
+ vez de utilizar diferentes lenguajes para el scripting en servidor o en
+ el cliente.
+\end_layout
+
+\begin_layout Standard
+Node.js posee una arquitectura orientada a los eventos, capaz de realizar
+ entradas y salidas asíncronas.
+ Esto permite optimizar el consumo y escalabilidad de aplicaciones web en
+ muchas operaciones de E/S, como también aplicaciones en tiempo real.
+ 
+\end_layout
+
+\begin_layout Standard
+El proyecto de desarrollo distribuido de Node.js, a manos de la Node.js Foundation
+, es facilitada por el programa de proyectos colaborativos de la Linux Foundatio
+n.
+ Algunas de las grandes empresas que utilizan software construido en Node.js
+ son: GoDaddy, Groupon, IBM, LinkedIn, Microsoft, Netflix, PayPal, Walmart,
+ entre otros.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Descripción general
+\end_layout
+
+\begin_layout Standard
+Node.js permite la creación de servidores web y herramientas de red utilizando
+ JavaScript y una colección de "módulos" que manejan varias funciones centrales.
+ Se proporcionan módulos para la E / S del sistema de archivos , redes (DNS,
+ HTTP, TCP, TLS / SSL o UDP), datos binarios (buffers), funciones de criptografí
+a , flujos de datos , y otras funciones básicas.
+ Los módulos de Node.js utilizan una API diseñada para reducir la complejidad
+ de escribir aplicaciones de servidor.
+ 
+\end_layout
+
+\begin_layout Standard
+Aunque inicialmente el sistema de módulos se basaba en el patrón de módulos
+ commonjs, la reciente introducción de módulos en la especificación ECMAScript
+ ha cambiado la dirección de usar módulos ECMAScript en Node.js de forma
+ predeterminada.
+\end_layout
+
+\begin_layout Standard
+Node.js es oficialmente compatible con Linux, macOS y Microsoft Windows 7
+ y Server 2008 (y posteriores) por parte del equipo.
+ También hay soporte de nivel 2 para SmartOS e IBM AIX.
+ Y soporte experimental para FreeBSD; OpenBSD también funciona y, por ejemplo,
+ las versiones LTS disponibles para IBM i (AS/400).
+ El código fuente provisto también puede construirse en sistemas operativos
+ similares a los que son oficialmente compatibles o ser modificado por terceros
+ para que sean compatibles con otros, como los servidores NonStop y Unix.
+ Alternativamente, se puede escribir con CoffeeScript (una alternativa de
+ JavaScript), Dart o TypeScript (formas de JavaScript fuertemente tipadas),
+ o cualquier otro lenguaje que se pueda compilar en JavaScript.
+ 
+\end_layout
+
+\begin_layout Standard
+Node.js se utiliza principalmente para crear programas de red como los servidores
+ web.
+ La diferencia más significativa entre Node.js y PHP es que la mayoría de
+ las funciones en el bloque PHP hasta su finalización (los comandos solo
+ se ejecutan después de que terminan los comandos anteriores), mientras
+ que las funciones de Node.js no se bloquean (los comandos se ejecutan simultánea
+mente o incluso en paralelo, y use devoluciones de llamada para indicar
+ la finalización o el fallo).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Arquitectura de la plataforma
+\end_layout
+
+\begin_layout Standard
+Node.js lleva la programación dirigida por eventos a los servidores web ,
+ lo que permite el desarrollo de servidores web rápidos en JavaScript.
+ Los desarrolladores pueden crear servidores escalables sin utilizar subprocesos
+, mediante el uso de un modelo simplificado de programación dirigida por
+ eventos que utiliza devoluciones de llamada para indicar la finalización
+ de una tarea.
+ Node.js conecta la facilidad de un lenguaje de scripting (JavaScript) con
+ el poder de la programación en red de Unix.
+ 
+\end_layout
+
+\begin_layout Standard
+Node.js fue construido en el motor de JavaScript Google V8 ya que fue de
+ código abierto bajo la licencia BSD .
+ Es competente con los fundamentos de Internet como HTTP, DNS, TCP.
+ JavaScript también era un lenguaje muy conocido, lo que hacía que Node.js
+ fuera accesible para la comunidad de desarrollo web.
+\end_layout
+
+\begin_layout Subsubsection
+Historia
+\end_layout
+
+\begin_layout Standard
+Node.js fue escrito inicialmente por Ryan Dahl en 2009, aproximadamente trece
+ años después de la introducción del primer entorno de JavaScript del lado
+ del servidor, LiveWire Pro Web de Netscape.
+ La versión inicial solo era compatible con Linux y Mac OS X.
+ Su desarrollo y mantenimiento fue dirigido por Dahl y, posteriormente,
+ patrocinado por Joyent .
+\end_layout
+
+\begin_layout Standard
+Dahl criticó las posibilidades limitadas del servidor web más popular en
+ 2009, el Servidor HTTP Apache , para manejar muchas conexiones concurrentes
+ (hasta 10,000 o más) y la forma más común de crear código (programación
+ secuencial).
+\end_layout
+
+\begin_layout Standard
+Dahl demostró el proyecto en la JSConf europea inaugural el 8 de noviembre
+ de 2009.
+ Para ello combinó el motor de JavaScript V8 de Google , un ciclo de eventos
+ y una API de E/S de bajo nivel.
+\end_layout
+
+\begin_layout Standard
+En enero de 2010, se introdujo un administrador de paquetes para el entorno
+ Node.js llamado npm.
+ El administrador de paquetes facilita a los programadores publicar y compartir
+ el código fuente de las bibliotecas Node.js y está diseñado para simplificar
+ la instalación, actualización y desinstalación de las bibliotecas.
+\end_layout
+
+\begin_layout Standard
+En junio de 2011, Microsoft y Joyent implementaron una versión nativa para
+ Windows de Node.js.
+ La primera compilación de Node.js compatible con Windows se lanzó en julio
+ de 2011.
+\end_layout
+
+\begin_layout Standard
+En enero de 2012, Dahl se hizo a un lado, promoviendo al compañero de trabajo
+ y creador de npm Isaac Schlueter para gestionar el proyecto.
+ En enero de 2014, Schlueter anunció que Timothy J.
+ Fontaine lideraría el proyecto.
+\end_layout
+
+\begin_layout Standard
+En diciembre de 2014, Fedor Indutny comenzó io.js, una bifurcación de Node.js.
+ Debido al conflicto interno sobre el liderazgo de Joyent, io.js se creó
+ como una alternativa de gobierno abierto con un comité técnico independiente.
+ A diferencia de Node.js, los autores planeaban mantener io.js actualizado
+ con las últimas versiones del motor de JavaScript Google V8.
+\end_layout
+
+\begin_layout Standard
+En febrero de 2015, se anunció la intención de formar una Fundación Node.js
+ neutral.
+ Para junio de 2015, las comunidades Node.js y io.js votaron para trabajar
+ juntas bajo la Fundación Node.js.
+ 
+\end_layout
+
+\begin_layout Standard
+En septiembre de 2015, Node.js v0.12 y io.js v3.3 se fusionaron de nuevo en
+ Node v4.0.
+ Esta combinación trajo las características del V8 ES6 a Node.js y un ciclo
+ de lanzamiento de soporte a largo plazo.
+ A partir de 2016, el sitio web io.js recomienda que los desarrolladores
+ vuelvan a Node.js y que no se planifiquen más lanzamientos de io.js debido
+ a la fusión.
+\end_layout
+
+\begin_layout Subsection
+Express
+\end_layout
+
+\begin_layout Standard
+Express.js, o simplemente Express, es un framework de desarrollo de aplicaciones
+ web para Node.js.
+ Fue liberado como software de código abierto con la Licencia MIT.
+ Está diseñado para la construcción de aplicaciones web y APIs.
+ Ha sido llamado como el framework de servidor estándar de facto para Node.js.
+ 
+\end_layout
+
+\begin_layout Standard
+El autor original, TJ Holowaychuk, lo describió como un servidor inspirado
+ en Sinatra.
+ Esto significa que es minimalista, y algunas de las varias funciones se
+ encuentran disponibles a través de plugins.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+¿Qué popularidad tiene Node/Express?
+\end_layout
+
+\begin_layout Standard
+La popularidad de un framework web es importante porque es un indicador
+ de se continuará manteniendo y qué recursos tienen más probabilidad de
+ estar disponibles en términos de documentación, librerías de extensiones
+ y soporte técnico.
+\end_layout
+
+\begin_layout Standard
+No existe una medida disponible de inmediato y definitiva de la popularidad
+ de los frameworks de lado servidor (aunque sitios como Hot Frameworks intentan
+ asesorar sobre popularidad usando mecanismos como contar para cada plataforma
+ el número de preguntas sobre proyectos en GitHub y StackOverflow).
+ Una pregunta mejor es si Node y Express son lo "suficientemente populares"
+ para evitar los problemas de las plataformas menos populares.
+ ¿Continúan evolucionando? ¿Puedes conseguir la ayuda que necesitas? ¿Hay
+ alguna posibilidad de que consigas un trabajo remunerado si aprendes Express?
+\end_layout
+
+\begin_layout Standard
+De acuerdo con el número de compañías de perfil alto que usan Express, el
+ número de gente que contribuye al código base, y el número de gente que
+ proporciona soporte tanto libre como pagado, podemos entonces decir que
+ Express es un framework popular.
+\end_layout
+
+\begin_layout Standard
+Express proporciona mecanismos para:
+\end_layout
+
+\begin_layout Itemize
+Escritura de manejadores de peticiones con diferentes verbos HTTP en diferentes
+ caminos URL (rutas).
+ 
+\end_layout
+
+\begin_layout Itemize
+Integración con motores de renderización de "vistas" para generar respuestas
+ mediante la introducción de datos en plantillas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Establecer ajustes de aplicaciones web como qué puerto usar para conectar,
+ y la localización de las plantillas que se utilizan para renderizar la
+ respuesta.
+ 
+\end_layout
+
+\begin_layout Itemize
+Añadir procesamiento de peticiones "middleware" adicional en cualquier punto
+ dentro de la tubería de manejo de la petición.
+ 
+\end_layout
+
+\begin_layout Standard
+A pesar de que Express es en sí mismo bastante minimalista, los desarrolladores
+ han creado paquetes de middleware compatibles para abordar casi cualquier
+ problema de desarrollo web.
+ Hay librerías para trabajar con cookies, sesiones, inicios de sesión de
+ usuario, parámetros URL, datos POST, cabeceras de seguridad y muchos más.
+ Puedes encontrar una lista de paquetes middleware mantenida por el equipo
+ de Express en Express Middleware (junto con una lista de algunos de los
+ paquetes más populares de terceros).
+\end_layout
+
+\begin_layout Subsubsection
+¿Es Express dogmático?
+\end_layout
+
+\begin_layout Standard
+Los frameworks web frecuentemente se refieren a sí mismos como "dogmáticos"
+ ("opinionated") o "no dogmáticos" ("unopinionated").
+\end_layout
+
+\begin_layout Standard
+Los frameworks dogmáticos son aquellos que opinan acerca de la "manera correcta"
+ de gestionar cualquier tarea en particular.
+ Ofrecen soporte para el desarrollo rápido en un dominio en particular (resolver
+ problemas de un tipo en particular) porque la manera correcta de hacer
+ cualquier cosa está generalmente bien comprendida y bien documentada.
+ Sin embargo pueden ser menos flexibles para resolver problemas fuera de
+ su dominio principal, y tienden a ofrecer menos opciones para elegir qué
+ componentes y enfoques pueden usarse.
+\end_layout
+
+\begin_layout Standard
+Los framewoks no dogmáticos, en contraposición, tienen muchas menos restriccione
+s sobre el modo mejor de unir componentes para alcanzar un objetivo, o incluso
+ qué componentes deberían usarse.
+ Hacen más fácil para los desarrolladores usar las herramientas más adecuadas
+ para completar una tarea en particular, si bien al coste de que necesitas
+ encontrar esos componentes por uno mismo.
+\end_layout
+
+\begin_layout Standard
+Express es no dogmático, transigente.
+ Puede insertar casi cualquier middleware compatible que se desee dentro
+ de la cadena de manejo de la petición, en casi cualquier orden que se quiera.
+ Permite estructurar una app en un fichero o mútiples ficheros y usar cualquier
+ estructura de directorios.
+ 
+\end_layout
+
+\begin_layout Subsection
+API de Twitter
+\end_layout
+
+\begin_layout Standard
+Una interfaz de programación de aplicaciones ( API ) es un conjunto de definicio
+nes de subrutinas, protocolos de comunicación y herramientas para crear
+ software.
+ En términos generales, es un conjunto de métodos de comunicación claramente
+ definidos entre varios componentes.
+ Una buena API hace que sea más fácil desarrollar un software al proporcionar
+ todos los bloques de construcción, que luego son ensamblados por el programador
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+Una API puede ser para un sistema basado en web, sistema operativo , sistema
+ de base de datos, hardware de computadora o biblioteca de software .
+\end_layout
+
+\begin_layout Standard
+En el caso de la API de Twitter, estamos ante la presencia de una API Web,
+ en el cual las consultas son hechas a través de solicitudes GET o POST
+ a la misma.
+ 
+\end_layout
+
+\begin_layout Standard
+Entre las funciones que proporciona la API de Twitter para los desarrolladores
+ tenemos: 
+\end_layout
+
+\begin_layout Enumerate
+Integrar Twitter a nuestra aplicación web.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Twittear o retwittear desde nuestra aplicación automáticamente.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Realizar campañas de publicidades.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Capturar tweets en tiempo real, o streaming.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Búsqueda de tweets históricos (limitado para usuarios gratuitos).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Objeto Tweet
+\end_layout
+
+\begin_layout Standard
+Los tweets son el bloque de construcción atómico básico de todas las cosas
+ de Twitter.
+ Los tweets son también conocidos como “actualizaciones de estado.” El objeto
+ Tweet tiene una larga lista de 'nivel raíz' atributos, incluidos los atributos
+ fundamentales tales como id, created_at, y text.
+ Los objetos de tweet son también el objeto "padre" de varios objetos hijos.
+ Los objetos anidados incluyen user, entities y extended_entities.
+ Los tweets que están etiquetados geográficamente tendrán un objeto place
+ secundario.
+ 
+\end_layout
+
+\begin_layout Subsection
+Sentiment
+\end_layout
+
+\begin_layout Standard
+Sentiment es un paquete de software alojado en NPM que permite el análisis
+ de sentimientos de cadena de textos utilizando el listado de palabras AFINN-165
+ y el Emoji World Sentiment Ranking.
+ 
+\end_layout
+
+\begin_layout Standard
+Entre las características principales que lo destacan es: 
+\end_layout
+
+\begin_layout Enumerate
+Licencia MIT.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Análisis de sentimiento en ingles.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Posibilidad de agregar nuevos lenguajes.
+\end_layout
+
+\begin_layout Enumerate
+Opciones de benchmark.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Funcionamiento
+\end_layout
+
+\begin_layout Standard
+A la cadena de texto a analizar, Sentiment aplica un proceso de tokenización.
+ Esto significa dividir el conjunto de caracteres en “tokens”, es decir,
+ subcadenas de texto formadas a partir de separar la cadena en los espacios,
+ y eliminando los caracteres no alfanuméricos.
+ 
+\end_layout
+
+\begin_layout Standard
+Cada uno de los tokens obtenidos es comparado con su valor en el diccionario
+ AFFIN-165 y el Emoji World Sentiment Ranking.
+ En base a ello, cada token obtiene un valor de sentimiento, que es un valor
+ numérico entre -5 y 5.
+ La suma de los valores de sentimientos corresponden al puntaje S: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S=\sum_{1}^{n}t_{1}+t_{2}+\ldots+t_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y siendo el valor comparativo C respecto a la cantidad de tokens:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C=\sum_{1}^{n}\frac{t_{1}+t_{2}+\ldots+t_{n}}{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Identificación de variables
+\end_layout
+
+\begin_layout Itemize
+Variable de estudio: sentimientos generados por la serie de televisión Game
+ Of Thrones.
+ 
+\end_layout
+
+\begin_layout Itemize
+Variable disciplinar: Cálculo de los sentimientos generados por la serie
+ Game Of Thrones a través de un proceso algorítmico ejecutado en un servidor
+ web.
+ 
+\end_layout
+
+\begin_layout Section
+Objetivo general
+\end_layout
+
+\begin_layout Standard
+Capturar, calcular, almacenar y describir los sentimientos generados durante
+ la emisión de un episodio de Game Of Thrones por usuarios de Twitter de
+ habla inglesa.
+\end_layout
+
+\begin_layout Section
+Objetivos especificos
+\end_layout
+
+\begin_layout Enumerate
+Identificar los mensajes enviados a modo de tweet que sean relacionados
+ con Game Of Thrones.
+\end_layout
+
+\begin_layout Enumerate
+Capturar esos mensajes, y posteriormente calcular su polaridad de sentimiento.
+\end_layout
+
+\begin_layout Enumerate
+Almacenar los datos generados en una base de datos.
+\end_layout
+
+\begin_layout Enumerate
+Inferir sobre los sentimientos generados en base a los resultados obtenidos.
+\end_layout
+
+\begin_layout Section
+Hipótesis
+\end_layout
+
+\begin_layout Standard
+Los sentimientos generados por la serie Game Of Thrones serán en su mayoría
+ de polaridad positiva debido a la gran popularidad de la misma.
+\end_layout
+
+\begin_layout Section
+
+\end_layout
+
+\end_body
+\end_document
