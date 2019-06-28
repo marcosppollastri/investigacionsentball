@@ -253,9 +253,10 @@ Problema
 \end_layout
 
 \begin_layout Standard
-¿Qué sentimientos se generan durante la emisión de un cápitulo del a serie
- de televisión Game Of Thrones en los usuarios de la red social Twitter
- de habla ingles, durante el año 2019?
+¿Qué polaridad de sentimientos generó un capitulo de la serie Game Of Thrones
+ en los textos publicados por los usuarios de la red social Twitter durante
+ la emisión de dicho capitulo determinado, mediante un algoritmo de calculo
+ de sentimientos, en el año 2019?
 \end_layout
 
 \begin_layout Section
@@ -723,134 +724,6 @@ En septiembre de 2015, Node.js v0.12 y io.js v3.3 se fusionaron de nuevo en
 \end_layout
 
 \begin_layout Subsection
-Express
-\end_layout
-
-\begin_layout Standard
-Express.js, o simplemente Express, es un framework de desarrollo de aplicaciones
- web para Node.js.
- Fue liberado como software de código abierto con la Licencia MIT.
- Está diseñado para la construcción de aplicaciones web y APIs.
- Ha sido llamado como el framework de servidor estándar de facto para Node.js.
- 
-\end_layout
-
-\begin_layout Standard
-El autor original, TJ Holowaychuk, lo describió como un servidor inspirado
- en Sinatra.
- Esto significa que es minimalista, y algunas de las varias funciones se
- encuentran disponibles a través de plugins.
- 
-\end_layout
-
-\begin_layout Subsubsection
-¿Qué popularidad tiene Node/Express?
-\end_layout
-
-\begin_layout Standard
-La popularidad de un framework web es importante porque es un indicador
- de se continuará manteniendo y qué recursos tienen más probabilidad de
- estar disponibles en términos de documentación, librerías de extensiones
- y soporte técnico.
-\end_layout
-
-\begin_layout Standard
-No existe una medida disponible de inmediato y definitiva de la popularidad
- de los frameworks de lado servidor (aunque sitios como Hot Frameworks intentan
- asesorar sobre popularidad usando mecanismos como contar para cada plataforma
- el número de preguntas sobre proyectos en GitHub y StackOverflow).
- Una pregunta mejor es si Node y Express son lo "suficientemente populares"
- para evitar los problemas de las plataformas menos populares.
- ¿Continúan evolucionando? ¿Puedes conseguir la ayuda que necesitas? ¿Hay
- alguna posibilidad de que consigas un trabajo remunerado si aprendes Express?
-\end_layout
-
-\begin_layout Standard
-De acuerdo con el número de compañías de perfil alto que usan Express, el
- número de gente que contribuye al código base, y el número de gente que
- proporciona soporte tanto libre como pagado, podemos entonces decir que
- Express es un framework popular.
-\end_layout
-
-\begin_layout Standard
-Express proporciona mecanismos para:
-\end_layout
-
-\begin_layout Itemize
-Escritura de manejadores de peticiones con diferentes verbos HTTP en diferentes
- caminos URL (rutas).
- 
-\end_layout
-
-\begin_layout Itemize
-Integración con motores de renderización de "vistas" para generar respuestas
- mediante la introducción de datos en plantillas.
- 
-\end_layout
-
-\begin_layout Itemize
-Establecer ajustes de aplicaciones web como qué puerto usar para conectar,
- y la localización de las plantillas que se utilizan para renderizar la
- respuesta.
- 
-\end_layout
-
-\begin_layout Itemize
-Añadir procesamiento de peticiones "middleware" adicional en cualquier punto
- dentro de la tubería de manejo de la petición.
- 
-\end_layout
-
-\begin_layout Standard
-A pesar de que Express es en sí mismo bastante minimalista, los desarrolladores
- han creado paquetes de middleware compatibles para abordar casi cualquier
- problema de desarrollo web.
- Hay librerías para trabajar con cookies, sesiones, inicios de sesión de
- usuario, parámetros URL, datos POST, cabeceras de seguridad y muchos más.
- Puedes encontrar una lista de paquetes middleware mantenida por el equipo
- de Express en Express Middleware (junto con una lista de algunos de los
- paquetes más populares de terceros).
-\end_layout
-
-\begin_layout Subsubsection
-¿Es Express dogmático?
-\end_layout
-
-\begin_layout Standard
-Los frameworks web frecuentemente se refieren a sí mismos como "dogmáticos"
- ("opinionated") o "no dogmáticos" ("unopinionated").
-\end_layout
-
-\begin_layout Standard
-Los frameworks dogmáticos son aquellos que opinan acerca de la "manera correcta"
- de gestionar cualquier tarea en particular.
- Ofrecen soporte para el desarrollo rápido en un dominio en particular (resolver
- problemas de un tipo en particular) porque la manera correcta de hacer
- cualquier cosa está generalmente bien comprendida y bien documentada.
- Sin embargo pueden ser menos flexibles para resolver problemas fuera de
- su dominio principal, y tienden a ofrecer menos opciones para elegir qué
- componentes y enfoques pueden usarse.
-\end_layout
-
-\begin_layout Standard
-Los framewoks no dogmáticos, en contraposición, tienen muchas menos restriccione
-s sobre el modo mejor de unir componentes para alcanzar un objetivo, o incluso
- qué componentes deberían usarse.
- Hacen más fácil para los desarrolladores usar las herramientas más adecuadas
- para completar una tarea en particular, si bien al coste de que necesitas
- encontrar esos componentes por uno mismo.
-\end_layout
-
-\begin_layout Standard
-Express es no dogmático, transigente.
- Puede insertar casi cualquier middleware compatible que se desee dentro
- de la cadena de manejo de la petición, en casi cualquier orden que se quiera.
- Permite estructurar una app en un fichero o mútiples ficheros y usar cualquier
- estructura de directorios.
- 
-\end_layout
-
-\begin_layout Subsection
 API de Twitter
 \end_layout
 
@@ -1016,15 +889,13 @@ Identificación de variables
 \end_layout
 
 \begin_layout Itemize
-Variable de estudio: sentimientos generados por la serie de televisión Game
- Of Thrones.
- 
+Variable de estudio: Polaridad de sentimientos generados en un captiulo
+ de la serie Game Of Thrones en los textos publicados por los usuarios de
+ Twitter.
 \end_layout
 
 \begin_layout Itemize
-Variable disciplinar: Cálculo de los sentimientos generados por la serie
- Game Of Thrones a través de un proceso algorítmico ejecutado en un servidor
- web.
+Variable disciplinar: algoritmo de cálculo de polaridad de sentimientos.
  
 \end_layout
 
@@ -1048,15 +919,15 @@ Identificar los mensajes enviados a modo de tweet que sean relacionados
 \end_layout
 
 \begin_layout Enumerate
-Capturar esos mensajes, y posteriormente calcular su polaridad de sentimiento.
+Enumerar los datos en una base de datos.
 \end_layout
 
 \begin_layout Enumerate
-Almacenar los datos generados en una base de datos.
+Determinar los sentimientos que formaran parte del analisis.
 \end_layout
 
 \begin_layout Enumerate
-Inferir sobre los sentimientos generados en base a los resultados obtenidos.
+Describir los sentimientos cotejados.
 \end_layout
 
 \begin_layout Section
@@ -1114,8 +985,16 @@ Unidad de análisis
 \end_layout
 
 \begin_layout Standard
-Mensajes enviados a la red social Twitter que sean referidos a la serie
- de televisión Game Of Thrones.
+Cada uno de los textos enviados por los usuarios de Twitter durante la emisión
+ de un capitulo determinado que contengan el hashtag 
+\begin_inset Quotes qld
+\end_inset
+
+#gameofthrones
+\begin_inset Quotes qrd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1123,12 +1002,24 @@ Unidad de observación
 \end_layout
 
 \begin_layout Standard
-Usuarios de la red social Twitter que envien mensajes durante la emisión
- del capitulo.
+El conjunto de mensajes enviados por los usuarios de Twitter durante la
+ emisión de un capitulo determinado que contengan el hashtag 
+\begin_inset Quotes qld
+\end_inset
+
+#gameofthrones
+\begin_inset Quotes qrd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
 Universo
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
