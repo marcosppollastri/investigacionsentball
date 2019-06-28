@@ -1,10 +1,15 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass scrartcl
+\begin_preamble
+% Added by lyx2lyx
+\renewcommand{\textendash}{--}
+\renewcommand{\textemdash}{---}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language spanish-mexico
@@ -21,8 +26,6 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
-\use_microtype false
-\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -52,7 +55,6 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
-\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -61,10 +63,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\is_math_indent 0
-\math_numbering_side default
-\quotes_style swiss
-\dynamic_quotes 0
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -426,6 +425,46 @@ La mayor cantidad de versiones de diccionarios está en idioma inglés aunque
 \end_layout
 
 \begin_layout Subsubsection
+Conceptos claves referentes al analisis de sentimientos
+\end_layout
+
+\begin_layout Standard
+Bing Liu en su libro 
+\shape italic
+"Sentiment Analysis: mining sentiments, opinions, and emotions" 
+\shape default
+destaca las siguientes definiciones:
+\end_layout
+
+\begin_layout Enumerate
+
+\noun on
+Sentimiento:
+\noun default
+ Una sensación, actitud, evaluacion o emoción subyacente asociada a una
+ opinión.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\noun on
+Polaridad u orientación de sentimiento:
+\noun default
+ Los sentimientos pueden tener una polaridad positiva, negativa o neutra.
+ Un sentimiento neutral usualmente significa la ausencia de un sentimiento.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\noun on
+Intensidad de sentimiento: 
+\noun default
+Cada sentimiento de una cierta polaridad tendr
+\end_layout
+
+\begin_layout Subsubsection
 Tipos de análisis de sentimiento
 \end_layout
 
@@ -535,6 +574,167 @@ Twitter permite identificar estos temas a través de los denominados hashtag
  Esto permite a los usuarios obtener resultados rápidamente sobre un mismo
  tema.
  
+\end_layout
+
+\begin_layout Subsubsection
+API de Twitter
+\end_layout
+
+\begin_layout Standard
+Una interfaz de programación de aplicaciones ( API ) es un conjunto de definicio
+nes de subrutinas, protocolos de comunicación y herramientas para crear
+ software.
+ En términos generales, es un conjunto de métodos de comunicación claramente
+ definidos entre varios componentes.
+ Una buena API hace que sea más fácil desarrollar un software al proporcionar
+ todos los bloques de construcción, que luego son ensamblados por el programador
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+Una API puede ser para un sistema basado en web, sistema operativo , sistema
+ de base de datos, hardware de computadora o biblioteca de software .
+\end_layout
+
+\begin_layout Standard
+En el caso de la API de Twitter, estamos ante la presencia de una API Web,
+ en el cual las consultas son hechas a través de solicitudes GET o POST
+ a la misma.
+ 
+\end_layout
+
+\begin_layout Standard
+Entre las funciones que proporciona la API de Twitter para los desarrolladores
+ tenemos: 
+\end_layout
+
+\begin_layout Enumerate
+Integrar Twitter a nuestra aplicación web.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Twittear o retwittear desde nuestra aplicación automáticamente.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Realizar campañas de publicidades.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Capturar tweets en tiempo real, o streaming.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Búsqueda de tweets históricos (limitado para usuarios gratuitos).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Objeto Tweet
+\end_layout
+
+\begin_layout Standard
+Los tweets son el bloque de construcción atómico básico de todas las cosas
+ de Twitter.
+ Los tweets son también conocidos como “actualizaciones de estado.” El objeto
+ Tweet tiene una larga lista de 'nivel raíz' atributos, incluidos los atributos
+ fundamentales tales como id, created_at, y text.
+ Los objetos de tweet son también el objeto "padre" de varios objetos hijos.
+ Los objetos anidados incluyen user, entities y extended_entities.
+ Los tweets que están etiquetados geográficamente tendrán un objeto place
+ secundario.
+ 
+\end_layout
+
+\begin_layout Subsection
+Sentiment
+\end_layout
+
+\begin_layout Standard
+Sentiment es un paquete de software alojado en NPM que permite el análisis
+ de sentimientos de cadena de textos utilizando el listado de palabras AFINN-165
+ y el Emoji World Sentiment Ranking.
+ 
+\end_layout
+
+\begin_layout Standard
+Entre las características principales que lo destacan es: 
+\end_layout
+
+\begin_layout Enumerate
+Licencia MIT.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Análisis de sentimiento en ingles.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Posibilidad de agregar nuevos lenguajes.
+\end_layout
+
+\begin_layout Enumerate
+Opciones de benchmark.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Funcionamiento
+\end_layout
+
+\begin_layout Standard
+A la cadena de texto a analizar, Sentiment aplica un proceso de tokenización.
+ Esto significa dividir el conjunto de caracteres en “tokens”, es decir,
+ subcadenas de texto formadas a partir de separar la cadena en los espacios,
+ y eliminando los caracteres no alfanuméricos.
+ 
+\end_layout
+
+\begin_layout Standard
+Cada uno de los tokens obtenidos es comparado con su valor en el diccionario
+ AFFIN-165 y el Emoji World Sentiment Ranking.
+ En base a ello, cada token obtiene un valor de sentimiento, que es un valor
+ numérico entre -5 y 5.
+ La suma de los valores de sentimientos corresponden al puntaje S: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S=\sum_{1}^{n}t_{1}+t_{2}+\ldots+t_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y siendo el valor comparativo C respecto a la cantidad de tokens:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C=\sum_{1}^{n}\frac{t_{1}+t_{2}+\ldots+t_{n}}{n}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -723,167 +923,6 @@ En septiembre de 2015, Node.js v0.12 y io.js v3.3 se fusionaron de nuevo en
  a la fusión.
 \end_layout
 
-\begin_layout Subsection
-API de Twitter
-\end_layout
-
-\begin_layout Standard
-Una interfaz de programación de aplicaciones ( API ) es un conjunto de definicio
-nes de subrutinas, protocolos de comunicación y herramientas para crear
- software.
- En términos generales, es un conjunto de métodos de comunicación claramente
- definidos entre varios componentes.
- Una buena API hace que sea más fácil desarrollar un software al proporcionar
- todos los bloques de construcción, que luego son ensamblados por el programador
- .
- 
-\end_layout
-
-\begin_layout Standard
-Una API puede ser para un sistema basado en web, sistema operativo , sistema
- de base de datos, hardware de computadora o biblioteca de software .
-\end_layout
-
-\begin_layout Standard
-En el caso de la API de Twitter, estamos ante la presencia de una API Web,
- en el cual las consultas son hechas a través de solicitudes GET o POST
- a la misma.
- 
-\end_layout
-
-\begin_layout Standard
-Entre las funciones que proporciona la API de Twitter para los desarrolladores
- tenemos: 
-\end_layout
-
-\begin_layout Enumerate
-Integrar Twitter a nuestra aplicación web.
- 
-\end_layout
-
-\begin_layout Enumerate
-Twittear o retwittear desde nuestra aplicación automáticamente.
- 
-\end_layout
-
-\begin_layout Enumerate
-Realizar campañas de publicidades.
- 
-\end_layout
-
-\begin_layout Enumerate
-Capturar tweets en tiempo real, o streaming.
- 
-\end_layout
-
-\begin_layout Enumerate
-Búsqueda de tweets históricos (limitado para usuarios gratuitos).
- 
-\end_layout
-
-\begin_layout Subsubsection
-Objeto Tweet
-\end_layout
-
-\begin_layout Standard
-Los tweets son el bloque de construcción atómico básico de todas las cosas
- de Twitter.
- Los tweets son también conocidos como “actualizaciones de estado.” El objeto
- Tweet tiene una larga lista de 'nivel raíz' atributos, incluidos los atributos
- fundamentales tales como id, created_at, y text.
- Los objetos de tweet son también el objeto "padre" de varios objetos hijos.
- Los objetos anidados incluyen user, entities y extended_entities.
- Los tweets que están etiquetados geográficamente tendrán un objeto place
- secundario.
- 
-\end_layout
-
-\begin_layout Subsection
-Sentiment
-\end_layout
-
-\begin_layout Standard
-Sentiment es un paquete de software alojado en NPM que permite el análisis
- de sentimientos de cadena de textos utilizando el listado de palabras AFINN-165
- y el Emoji World Sentiment Ranking.
- 
-\end_layout
-
-\begin_layout Standard
-Entre las características principales que lo destacan es: 
-\end_layout
-
-\begin_layout Enumerate
-Licencia MIT.
- 
-\end_layout
-
-\begin_layout Enumerate
-Análisis de sentimiento en ingles.
- 
-\end_layout
-
-\begin_layout Enumerate
-Posibilidad de agregar nuevos lenguajes.
-\end_layout
-
-\begin_layout Enumerate
-Opciones de benchmark.
- 
-\end_layout
-
-\begin_layout Subsubsection
-Funcionamiento
-\end_layout
-
-\begin_layout Standard
-A la cadena de texto a analizar, Sentiment aplica un proceso de tokenización.
- Esto significa dividir el conjunto de caracteres en “tokens”, es decir,
- subcadenas de texto formadas a partir de separar la cadena en los espacios,
- y eliminando los caracteres no alfanuméricos.
- 
-\end_layout
-
-\begin_layout Standard
-Cada uno de los tokens obtenidos es comparado con su valor en el diccionario
- AFFIN-165 y el Emoji World Sentiment Ranking.
- En base a ello, cada token obtiene un valor de sentimiento, que es un valor
- numérico entre -5 y 5.
- La suma de los valores de sentimientos corresponden al puntaje S: 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $S=\sum_{1}^{n}t_{1}+t_{2}+\ldots+t_{n}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Y siendo el valor comparativo C respecto a la cantidad de tokens:
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $C=\sum_{1}^{n}\frac{t_{1}+t_{2}+\ldots+t_{n}}{n}$
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Identificación de variables
 \end_layout
@@ -923,7 +962,7 @@ Enumerar los datos en una base de datos.
 \end_layout
 
 \begin_layout Enumerate
-Determinar los sentimientos que formaran parte del analisis.
+Determinar los sentimientos que formaran parte del análisis.
 \end_layout
 
 \begin_layout Enumerate
@@ -986,15 +1025,7 @@ Unidad de análisis
 
 \begin_layout Standard
 Cada uno de los textos enviados por los usuarios de Twitter durante la emisión
- de un capitulo determinado que contengan el hashtag 
-\begin_inset Quotes qld
-\end_inset
-
-#gameofthrones
-\begin_inset Quotes qrd
-\end_inset
-
-.
+ de un capitulo determinado que contengan el hashtag "#gameofthrones".
 \end_layout
 
 \begin_layout Subsection
@@ -1003,15 +1034,7 @@ Unidad de observación
 
 \begin_layout Standard
 El conjunto de mensajes enviados por los usuarios de Twitter durante la
- emisión de un capitulo determinado que contengan el hashtag 
-\begin_inset Quotes qld
-\end_inset
-
-#gameofthrones
-\begin_inset Quotes qrd
-\end_inset
-
-.
+ emisión de un capitulo determinado que contengan el hashtag "#gameofthrones".
 \end_layout
 
 \begin_layout Subsection
@@ -1040,15 +1063,8 @@ Criterio de selección
 \end_layout
 
 \begin_layout Standard
-Aquellos tweets que incluyen la palabra 
-\begin_inset Quotes qld
-\end_inset
-
-#gameofthrones
-\begin_inset Quotes qrd
-\end_inset
-
- capturados entre las 22:00 y 23:00 hs del día 21 de abril del 2019.
+Aquellos tweets que incluyen la palabra "#gameofthrones" capturados entre
+ las 22:00 y 23:00 hs del día 21 de abril del 2019.
 \end_layout
 
 \begin_layout Part
